@@ -19,7 +19,7 @@ after_script:
   - git config user.name "liolok"  #用户名
   - git config user.email "liolokit@gmail.com"  #邮箱
   - git add .
-  - git commit -m "Site updated"
+  - git commit -m "Site deployed by Travis CI"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置Token的名称
 # 结束构建
 
