@@ -1,0 +1,28 @@
+language: node_js  #设置语言
+
+node_js: stable  #设置相应的版本
+
+# 开始构建
+install:
+  - npm install  #配置Hexo环境
+
+script:
+  - hexo cl  #清除
+  - hexo g  #生成
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "liolok"  #用户名
+  - git config user.email "liolokit@gmail.com"  #邮箱
+  - git add .
+  - git commit -m "Site updated"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置Token的名称
+# 结束构建
+
+branches:
+  only:
+    - source  #只监测源码分支
+env:
+ global:
+   - GH_REF: github.com/liolok/liolok.github.io.git  #设置GH_REF
