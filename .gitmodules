@@ -1,0 +1,9 @@
+[submodule "next"]
+	path = themes/next
+	url = https://github.com/theme-next/hexo-theme-next
+[submodule "reading_progress"]
+	path = themes/next/source/lib/reading_progress
+	url = https://github.com/theme-next/theme-next-reading-progress
+[submodule "three"]
+	path = themes/next/source/lib/three
+	url = https://github.com/theme-next/theme-next-three
