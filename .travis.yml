@@ -26,3 +26,7 @@ branches:
 env:
  global:
    - GH_REF: github.com/liolok/liolok.github.io.git  #设置GH_REF
+
+cache:
+  directories:
+    - node_modules #加快构建速度
