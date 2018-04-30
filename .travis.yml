@@ -30,4 +30,3 @@ env:
 cache:
   directories:
     - node_modules #加快构建速度
-    - themes
