@@ -3,6 +3,9 @@ language: node_js  #设置语言
 node_js: stable  #设置相应的版本
 
 # 开始构建
+before_install:
+  - export TZ='Asia/Shanghai'
+  
 install:
   - npm install  #配置Hexo环境
 
