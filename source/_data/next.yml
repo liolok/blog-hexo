@@ -53,7 +53,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set rss to false to disable feed link.
-# Leave rss as empty to use site's feed link.
+# Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
 rss:
 
@@ -88,7 +88,7 @@ footer:
     version: true
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  # custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+  custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com/">GitHub Pages</a>
 
 # ---------------------------------------------------------------
 # SEO Settings
