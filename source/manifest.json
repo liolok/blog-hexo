@@ -3,7 +3,7 @@
   "name": "liolok's GitHub Pages",
   "short_name": "liolok's GitHub Pages",
   "theme_color": "#000000",
-  "background_color": "#00000000",
+  "background_color": "#000000",
   "display": "standalone",
   "scope": "/",
   "start_url": "/"
