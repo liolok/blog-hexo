@@ -1,8 +1,8 @@
 {
   "name": "liolok's GitHub Pages",
-  "short_name": "liolok's",
+  "short_name": "liolok's GitHub Pages",
   "theme_color": "#000000",
-  "background_color": "#003f71",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/"
