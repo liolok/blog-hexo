@@ -110,7 +110,7 @@ pwa:
   priority: 5
 
 # hexo-generator-amp
-# The following settings is the quick start options.
+# https://github.com/tea3/hexo-generator-amp#2-set-the-quick-option
 generator_amp:
   templateDir:  amp-template
   assetDistDir: amp-dist
@@ -123,3 +123,5 @@ generator_amp:
     width:  1024
     height: 800
   warningLog: false   # To display warning, please set true.
+  # https://github.com/ampproject/amphtml/tree/master/validator/nodejs
+  validateAMP: true   # To AMP HTML validate automatically, please set true.
