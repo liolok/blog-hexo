@@ -6,7 +6,6 @@
     "version": "3.7.1"
   },
   "dependencies": {
-    "amphtml-validator": "^1.0.23",
     "hexo": "^3.2.0",
     "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-generator-archive": "^0.1.4",
