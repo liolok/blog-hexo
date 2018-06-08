@@ -125,3 +125,8 @@ generator_amp:
   warningLog: false   # To display warning, please set true.
   # https://github.com/ampproject/amphtml/tree/master/validator/nodejs
   validateAMP: true   # To AMP HTML validate automatically, please set true.
+
+# hexo-generator-sitemap
+# https://github.com/hexojs/hexo-generator-sitemap
+sitemap: 
+    path: sitemap.xml
