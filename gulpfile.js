@@ -40,4 +40,4 @@ gulp.task('img', function() {
 });
 // 默认任务, 使用gulp4语法
 // gulp.task('default', ['html','css','js','img']);
-gulp.task('default', gulp.parallel(html, css, js, img))
+gulp.task('default', gulp.parallel('html','css','js','img'));
