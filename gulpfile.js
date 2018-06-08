@@ -8,7 +8,7 @@ var img_minify = require('gulp-imagemin');
 gulp.task('html', function() {
     return gulp.src('./public/**/*.html')
         .pipe(html_minify({
-        	collapseWhitespace: true
+        	collapseWhitespace: true,
             removeComments: true,
             minifyCSS: true,
             minifyJS: true,
