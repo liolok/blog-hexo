@@ -6,6 +6,11 @@
     "version": "3.7.1"
   },
   "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.0",
     "hexo": "^3.2.0",
     "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-generator-archive": "^0.1.4",

@@ -12,6 +12,7 @@ install:
 script:
   - hexo cl  #清除
   - hexo g  #生成
+  - gulp build  #压缩
 
 after_script:
   - cd ./public
