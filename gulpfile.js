@@ -38,5 +38,6 @@ gulp.task('img', function() {
             {'verbose': true}))
         .pipe(gulp.dest('./public/images'))
 });
-// 默认任务
-gulp.task('default', ['html','css','js','img']);
+// 默认任务, 使用gulp4语法
+// gulp.task('default', ['html','css','js','img']);
+gulp.task('default', gulp.parallel(html, css, js, img))
