@@ -109,24 +109,7 @@ pwa:
         strategy: networkFirst
   priority: 5
 
-# hexo-generator-amp
-# https://github.com/tea3/hexo-generator-amp#2-set-the-quick-option
-generator_amp:
-  templateDir:  amp-template
-  assetDistDir: amp-dist
-  logo:
-    path:   sample/sample-logo.png
-    width:  600
-    height: 60
-  substituteTitleImage:
-    path:   sample/sample-substituteTitleImage.png
-    width:  1024
-    height: 800
-  warningLog: false   # To display warning, please set true.
-  # https://github.com/ampproject/amphtml/tree/master/validator/nodejs
-  validateAMP: true   # To AMP HTML validate automatically, please set true.
-
 # hexo-generator-sitemap
 # https://github.com/hexojs/hexo-generator-sitemap
-sitemap: 
+sitemap:
     path: sitemap.xml
