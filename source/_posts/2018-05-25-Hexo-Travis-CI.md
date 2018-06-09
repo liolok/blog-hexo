@@ -1,8 +1,11 @@
 ---
 title: Hexo + Travis CI 博客管理
-tags: Hexo
+tags:
+  - Hexo
+  - Travis CI
 description: <center>Hexo 博客版本控制 & Travis CI 自动部署</center>
 date: 2018-05-25 09:20:33
+updated: 2018-05-26 19:25:33
 ---
 
 # 博客的部署流程
