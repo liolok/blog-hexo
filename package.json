@@ -6,6 +6,7 @@
     "version": "3.7.1"
   },
   "dependencies": {
+    "gitment": "0.0.3",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^3.9.4",
     "gulp-htmlmin": "^4.0.0",
