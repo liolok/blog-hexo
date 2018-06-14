@@ -1,8 +1,8 @@
 ---
 title: OpenGL中Bresenham直线算法及其决策参数(decision parameter)
+tags: OpenGL
 date: 2018-04-01
 updated: 2018-04-19
-tags: OpenGL
 ---
 ## 简单版本
 

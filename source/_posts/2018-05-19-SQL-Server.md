@@ -1,10 +1,8 @@
 ---
 title: SQL Server 数据库使用练习
+tags: [SQL, 数据库]
 date: 2018-05-19 08:49:15
 updated: 2018-05-19 10:20:15
-tags:
-  - 数据库
-	- SQL
 ---
 
 > 数据库原理上机实验题目及代码整理, 出自[教材](https://www.amazon.cn/dp/B01KUN09NE)习题3的题目均已在对应代码块开头标记题号.

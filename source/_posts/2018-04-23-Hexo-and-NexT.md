@@ -1,11 +1,9 @@
 ---
 title: Hexo + NexT 博客定制
+tags: [Hexo, NexT]
+description: <center>上一篇讲的是本博客的搭建, 这一篇总结博客及主题的私人定制.</center>
 date: 2018-04-23 19:03:17
 updated: 2018-04-25 21:10:31
-tags:
-	- Hexo
-	- NexT
-description: <center>上一篇讲的是本博客的搭建, 这一篇总结博客及主题的私人定制.</center>
 ---
 
 > 配置修改提示: 

@@ -1,11 +1,9 @@
 ---
 title: Hexo + GitHub Pages 博客搭建
+tags: [Hexo, Github Pages]
+description: <center>基于Hexo框架和GitHub Pages托管服务的个人博客搭建过程</center>
 date: 2018-04-14 10:41:26
 updated: 2018-04-19
-tags: 
-	- Hexo
-	- Github Pages
-description: <center>基于Hexo框架和GitHub Pages托管服务的个人博客搭建过程</center>
 ---
 # 本地 - Hexo博客框架
 
