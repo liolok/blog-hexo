@@ -93,6 +93,8 @@ Windows平台上可能会有如下两个WARN, 提示可选依赖`fsevent`安装�
 
 用你自己的[GitHub账号](https://github.com/join)进行[New repository](https://github.com/new)操作, 详细配置如下, **替换**`liolok`为你的GitHub账号用户名(与左边的Owner**一致**)即可.
 
+> repo的命名格式参见 GitHub Pages 关于**用户个人主页**的[帮助](https://help.github.com/articles/user-organization-and-project-pages/#user-and-organization-pages-sites).
+
 ![创建仓库](创建仓库.png "创建仓库")
 
 在此之后, 这个独属于你的GitHub代码仓库就可以用来部署你的博客了.
@@ -100,8 +102,6 @@ Windows平台上可能会有如下两个WARN, 提示可选依赖`fsevent`安装�
 ## 配置Git本地个人信息
 
 将向repo提交commits的身份设为你自己.
-
-在Git Bash中运行下面两条命令:
 
 `git config --global user.name "你的用户名"`
 
@@ -119,11 +119,10 @@ deploy:
   repo: https://github.com/你的用户名/你的用户名.github.io.git
   branch: master
 ```
-> 注意YAML语法缩进, 统一使用两个空格缩进表示层级关系, 冒号与参数间用一个空格隔开.
 
 ![修改部署配置](修改部署配置.png "修改部署配置")
 
-
+> 注意YAML语法缩进, 统一使用两个空格缩进表示层级关系, 冒号与参数间用一个空格隔开.
 
 ## 部署博客到代码仓库
 
