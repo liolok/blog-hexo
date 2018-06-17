@@ -119,6 +119,7 @@ deploy:
   repo: https://github.com/你的用户名/你的用户名.github.io.git
   branch: master
 ```
+> 注意YAML语法缩进, 统一使用两个空格缩进表示层级关系, 冒号与参数间用一个空格隔开.
 
 ![修改部署配置](修改部署配置.png "修改部署配置")
 
