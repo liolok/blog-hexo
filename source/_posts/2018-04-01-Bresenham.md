@@ -4,6 +4,7 @@ tags: OpenGL
 date: 2018-04-01
 updated: 2018-04-19
 ---
+
 ## 简单版本
 
 [教材](https://book.douban.com/subject/3629471/)P17简单版本的Bresenham直线算法的C++代码如下:
@@ -22,10 +23,11 @@ void bresenhamLineOriginal(int x0, int y0, int x1, int y1)
 	}
 }
 ```
-<!-- more -->
 
 测试数据及效果图如下:
 ![简单版本的Bresenham直线算法效果图](简单版本的Bresenham直线算法效果图.png "简单版本的Bresenham直线算法")
+
+<!--more-->
 
 ## 推广算法
 从上图及其测试数据可以看出, 简单形式的Bresenham直线算法仅支持斜率区间为`[0,1]`的直线, 而且还有`x0 <= x2`这样一个隐含条件.
@@ -119,15 +121,23 @@ int main(int argc, char **argv)
 	return 0;
 }
 ```
+
 测试数据及效果图如下:
+
 ![推广后的Bresenham直线算法效果图](推广后的Bresenham直线算法效果图.png "推广后的Bresenham直线算法")
+
 ## 决策参数
+
 但是从简单到复杂的过程中还有一个变化是我不太理解的, 那就是决策参数`dp`(也就是原代码中的`e`). 初始值从`-0.5`改为`2 * d[Y] - d[X]`, 步长从斜率`k`改为`2 * d[Y]`, 大于零时的修正值从`-1`改为`2 * d[X]`. 这是为什么呢.
 
 ------
+
 以下是解答部分: 
+
 [opengl - Bresenham line algorithm - where does the decision parameter come from? - Stack Overflow](https://stackoverflow.com/questions/19188319/Bresenham-line-algorithm-where-does-the-decision-parameter-come-from)
+
 以下是原答案的个人翻译:
+
 Bresenham算法只进行整数运算. 主要思想在于尽量减少直线方程增量估值的计算. 
 该算法非常简单. 我们从直线方程入手: 
 `f(x) = y = a*x +b`

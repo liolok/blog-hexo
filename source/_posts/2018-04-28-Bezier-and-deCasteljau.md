@@ -1,12 +1,11 @@
 ---
 title: OpenGL中Bézier曲线及其deCasteljau剖分算法
 tags: OpenGL
+description: <center>当年还在用Windows XP的时候, 有一个屏保就叫贝塞尔曲线, 还是挺好看的, 我们来看一下怎么实现.</center>
 mathjax: true
 date: 2018-04-28 12:50:32
 updated: 2018-04-28 23:59:59
 ---
-
-> 当年还在用Windows XP的时候, 有一个屏保就叫贝塞尔曲线, 还是挺好看的, 我们来看一下怎么实现.
 
 # Bézier曲线
 
@@ -18,12 +17,9 @@ updated: 2018-04-28 23:59:59
 
 - 从几何意义上看, 当参数$t=0$时, 对应的是曲线的第$0$个控制顶点; 而当参数$t=1$时, 对应的是曲线的第$n$个控制顶点. 这就是Bézier曲线的端点插值特性, 即$R(0)=R_0$, $R(1)=R_n$.
 
-
 - 由于二项式系数的对称特性$C_n^i=C_n^{n-i}$, Bézier曲线控制顶点的也具有几何地位上的对称性, 即$\sum_iR_iB_{i,n}(t)=\sum_iR_{n-i}B_{i,n}(t)$. 
 
 Bézier曲线还有其他的性质, 这里就不展开讨论了. 下面重点讲一下如何求Bézier曲线的任意点.
-
-<!-- more -->
 
 # 按曲线定义求值
 
@@ -124,4 +120,3 @@ Point deCasteljauEval(const Bezier& R, double t)
 [The de Casteljau Algorithm for Evaluating Bezier Curves](https://liolok.github.io/2018/04/28/Bezier-and-deCasteljau/decasteljau_john.pdf), 这篇论文给了我很大启发.
 
 [Bézier curve - Wikipedia](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)([中文维基](https://zh.wikipedia.org/wiki/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A)), Bézier曲线动图示例出处.
-

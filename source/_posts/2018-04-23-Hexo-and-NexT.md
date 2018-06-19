@@ -339,4 +339,3 @@ three_waves: false
 canvas_lines: true
 canvas_sphere: false
 ```
-

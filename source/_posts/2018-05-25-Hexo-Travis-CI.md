@@ -17,7 +17,7 @@ updated: 2018-05-26 19:25:33
 
 按照之前的流程, 我们在本地目录创建一个Hexo框架的博客实例, 然后进行配置与写作, 本地预览调试觉得没问题可以上线博客了, 再将博客生成静态网站文件并部署到GitHub的repo上. 不出意外的话, 很快就能看到网站已经可以访问了.
 
-![旧的流程](2018-05-25-Hexo-Travis-CI\旧的流程.png)
+![旧的流程](旧的流程.png)
 
 > 上图中的部署(deploy)其实就是hexo封装好的`git push`, 将生成好的静态文件目录`./public`推到配置好的repo相应的branch上, 参见前文中的[修改博客的部署配置](https://liolok.github.io/2018/04/14/Hexo-GitHub-Pages/#修改博客的部署配置)一节.
 
@@ -33,7 +33,7 @@ updated: 2018-05-26 19:25:33
 
 那么如何实现呢? 我参考了很多博文和讨论, 看完了八仙过海之后, 我个人的做法是: 把博客实例整个push到repo的新建分支source, 并使用Travis CI将source分支里的博客实例自动部署到master分支. 这样一来, 重心放在博客本身上, 后面的生成静态文件和部署, 交给Travis CI去做, 我们只看结果, 没毛病就不问过程.
 
-![较新的流程](2018-05-25-Hexo-Travis-CI\较新的流程.png)
+![较新的流程](较新的流程.png)
 
 # 博客实例的版本控制
 
@@ -103,24 +103,24 @@ git remote add upsteam https://github.com/theme-next/hexo-theme-next
 
 进入账号的设置(`settings`), 左侧菜单最下方的`Developer settings`选项, 继续选择`Personal access tokens`, 通过右上方的`Generate new token`生成一个Travis CI自动部署博客专用的Token.
 
-![生成Token](2018-05-25-Hexo-Travis-CI\生成Token.png)
+![生成Token](生成Token.png)
 
 如上图所示, 填写Token用途后, 选中`repo`权限即可, 通过下方(权限列表略长, 往下翻页即可)的`Generate token`按钮完成生成, 并及时复制Token, 妥善保管.
 
-![复制Token](2018-05-25-Hexo-Travis-CI\复制Token.png)
+![复制Token](复制Token.png)
 
 ## Travis CI 线上配置
 
 ### 使用GitHub账号登入
-![使用GitHub账号登入Travis CI](2018-05-25-Hexo-Travis-CI/Configure-Travis-CI-0.png)
+![使用GitHub账号登入Travis CI](Configure-Travis-CI-0.png)
 <center>使用GitHub账号登入Travis CI</center>
 
 ### 开启repo的自动构建
-![开启repo的自动构建并进入详细设置](2018-05-25-Hexo-Travis-CI/Configure-Travis-CI-1.png)
+![开启repo的自动构建并进入详细设置](Configure-Travis-CI-1.png)
 <center>开启repo的自动构建并进入详细设置</center>
 
 ### 详细设置及添加Token
-![详细设置及添加Token](2018-05-25-Hexo-Travis-CI/Configure-Travis-CI-2.png)
+![详细设置及添加Token](Configure-Travis-CI-2.png)
 <center>详细设置及添加Token</center>
 
 > 因为repo下有两个分支: master和source, 开启上图中的`Build only if .travis.yml is present`选项, 保证不包含.travis.yml配置文件的master分支不会被监测变动以致循环构建.
