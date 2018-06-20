@@ -977,9 +977,14 @@ images: images
 # Gitalk
 gitalk:
   enable: true
-  ClientID: 4aa1b3f35fbe01aae528
-  ClientSecret: 21ca778bdb2a4b10dbb766a4ed1913e1c9106139
+  clientID: 4aa1b3f35fbe01aae528
+  clientSecret: 21ca778bdb2a4b10dbb766a4ed1913e1c9106139
   repo: liolok.github.io
   owner: liolok
   admin: liolok
   distractionFreeMode: true
+  flipMoveOptions:
+    staggerDelayBy: 150
+    appearAnimation: fade
+    enterAnimation: fade
+    leaveAnimation: fade
