@@ -1,6 +1,7 @@
 ---
-title: OpenGL中Bresenham直线算法及其决策参数(decision parameter)
-tags: OpenGL
+title: OpenGL中Bresenham直线算法及其决策参数
+tags: [OpenGL]
+description: <center>Bresenham直线绘制算法演变, 以及关于其决策参数的思考.</center>
 date: 2018-04-01
 updated: 2018-04-19
 ---
@@ -25,11 +26,11 @@ void bresenhamLineOriginal(int x0, int y0, int x1, int y1)
 ```
 
 测试数据及效果图如下:
+
 ![简单版本的Bresenham直线算法效果图](简单版本的Bresenham直线算法效果图.png "简单版本的Bresenham直线算法")
 
-<!--more-->
-
 ## 推广算法
+
 从上图及其测试数据可以看出, 简单形式的Bresenham直线算法仅支持斜率区间为`[0,1]`的直线, 而且还有`x0 <= x2`这样一个隐含条件.
 如何推广到任意直线, 下面简单说一下:
 
@@ -130,6 +131,8 @@ int main(int argc, char **argv)
 
 但是从简单到复杂的过程中还有一个变化是我不太理解的, 那就是决策参数`dp`(也就是原代码中的`e`). 初始值从`-0.5`改为`2 * d[Y] - d[X]`, 步长从斜率`k`改为`2 * d[Y]`, 大于零时的修正值从`-1`改为`2 * d[X]`. 这是为什么呢.
 
+<!-- TODO: 整理该翻译及个人总结 -->
+
 ------
 
 以下是解答部分: 
@@ -201,6 +204,8 @@ while(x<=x2) {
 看, `2*dy-dx`这样出现了 ;)
 
 ------
+
+<!-- END TODO -->
 
 ## 参考
 
