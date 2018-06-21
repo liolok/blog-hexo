@@ -1,5 +1,7 @@
 ---
 title: {{ title }}
+tags: []
+description: <center></center>
 date: {{ date }}
-tags:
+updated: {{ date }}
 ---

@@ -1,6 +1,6 @@
 ---
 title: OpenGL中Bézier曲线及其deCasteljau剖分算法
-tags: OpenGL
+tags: [OpenGL]
 description: <center>当年还在用Windows XP的时候, 有一个屏保就叫贝塞尔曲线, 还是挺好看的, 我们来看一下怎么实现.</center>
 mathjax: true
 date: 2018-04-28 12:50:32
