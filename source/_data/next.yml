@@ -981,7 +981,8 @@ gitalk:
   clientSecret: 21ca778bdb2a4b10dbb766a4ed1913e1c9106139
   repo: liolok.github.io
   owner: liolok
-  admin: liolok
+  admin: liolok # owner[, collaborator1, collaborator2, ...] 
+  id: location.pathname.split('/').filter(str => str.length).pop().substr(0,50)
   distractionFreeMode: true
   flipMoveOptions:
     staggerDelayBy: 150
