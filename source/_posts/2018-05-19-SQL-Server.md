@@ -149,6 +149,7 @@ INSERT INTO Class VALUES('01311','计算机软件','2001',220,'2001103');
 | Sno    | char(7)      | 否       | 学号   |
 | Cno    | char(1)      | 否       | 课程号 |
 | Gmark  | numeric(4,1) | 可       | 成绩   |
+
 ```SQL
 -- 建立成绩表
 CREATE TABLE Grade(
@@ -216,7 +217,7 @@ ALTER TABLE Student
   DROP COLUMN Nation;
 
 -- (3) 向成绩表中插入记录('2001110','3',80);
-INSERT INTO Grade(Sno,Cno,Gmark)
+INSERT INTO Grade(Sno, Cno, Gmark)
   VALUES('2001110','3',80);
 
 -- (4) 将学号为"2001110"的学生成绩修改为70分;
@@ -226,7 +227,7 @@ UPDATE Grade
 
 -- (5) 删除学号为"2001110"的学生的成绩记录;
 DELETE FROM Grade
-  WHERE Sno='2001110';
+  WHERE Sno = '2001110';
 
 -- (6) 在学生表的 Clno 属性上创建一个名为 IX_Class 的索引, 以班级号的升序排序;
 CREATE INDEX IX_Class ON Student (Clno);
@@ -244,29 +245,29 @@ DROP INDEX Student.IX_Class;
 SELECT DISTINCT Cno FROM Grade;
 
 -- (2) 找出 01311 班女学生的个人信息;
-SELECT * FROM Student WHERE Clno='01311' AND Ssex='女';
+SELECT * FROM Student WHERE Clno = '01311' AND Ssex = '女';
 
 -- (3) 找出 01311 班和 01312 班的学生姓名, 性别, 出生年份;
-SELECT Sname, Ssex, Birth=2018-Sage
+SELECT Sname, Ssex, (2018 - Sage) AS BirthYear
   FROM Student WHERE Clno IN ('01311', '01312');
 
 -- (4) 找出所有姓李的学生的个人信息;
 SELECT * FROM Student WHERE Sname LIKE '李%';
 
 -- (5) 找出学生李勇所在班级的学生人数;
--- 查询与李勇班级号相同的学生元组 Student 个数
+--- 写法1: 查询与李勇班级号相同的 Student 即学生元组个数
 SELECT COUNT(Sno) FROM Student
-  WHERE Clno = (SELECT Clno FROM Student WHERE Sname='李勇');
--- 查询 Class 的班级人数属性 Number
+  WHERE Clno = (SELECT Clno FROM Student WHERE Sname = '李勇');
+--- 写法2: 查询 Class 的班级人数属性 Number
 SELECT Number FROM Class C, Student S
-  WHERE C.Clno=S.Clno AND Sname='李勇';
--- 两种写法的区别在于如何理解题目要求的"学生人数",
--- 前者是数据库中的学生数据个数, 后者是班级的人数数据.
+  WHERE C.Clno = S.Clno AND Sname = '李勇';
+--- 两种写法的区别在于如何理解题目要求的"学生人数",
+--- 前者是数据库中的学生数据个数, 后者是班级的人数数据.
 
 -- (6) 找出名为操作系统的课程平均成绩, 最高分, 最低分;
-SELECT 平均成绩=AVG(Gmark),最高分=MAX(Gmark),最低分=MIN(Gmark)
+SELECT AVG(Gmark), MAX(Gmark), MIN(Gmark)
   FROM Course C,Grade G
-  WHERE C.Cno=G.Cno AND Cname='操作系统';
+  WHERE C.Cno = G.Cno AND Cname = '操作系统';
 
 -- (7) 找出选修了课程的学生人数;
 SELECT COUNT(DISTINCT Sno) FROM Grade;
@@ -274,13 +275,13 @@ SELECT COUNT(DISTINCT Sno) FROM Grade;
 -- (8) 找出选修了课程操作系统的学生人数;
 SELECT COUNT(DISTINCT Sno)
   FROM Course C,Grade G
-  WHERE C.Cno=G.Cno AND Cname='操作系统';
+  WHERE C.Cno = G.Cno AND Cname = '操作系统';
 
--- (9) 找出2000级计算机软件班的成绩为空的学生姓名.
+-- (9) 找出 2000 级计算机软件班的成绩为空的学生姓名.
 SELECT DISTINCT Sname
   FROM Student S,Class C,Grade G
-  WHERE S.Clno=C.Clno AND S.Sno=G.Sno
-    AND Inyear='2000' AND Speciality='计算机软件'
+  WHERE S.Clno = C.Clno AND S.Sno = G.Sno
+    AND Inyear = '2000' AND Speciality = '计算机软件'
     AND Gmark IS NULL;
 ```
 
@@ -291,20 +292,20 @@ SELECT DISTINCT Sname
 
 -- (1) 找出与李勇在同一个班级的学生信息;
 SELECT * FROM Student
-  WHERE Clno = (SELECT Clno FROM Student WHERE Sname='李勇')
-    AND Sname != '李勇';
+  WHERE Clno = (SELECT Clno FROM Student WHERE Sname = '李勇')
+    AND Sname <> '李勇';
 
 -- (2) 找出所有与李勇有相同选修课程的学生信息;
 SELECT * FROM Student
   WHERE Sno IN (SELECT Sno FROM Grade
     WHERE Cno IN (SELECT Cno FROM Student S, Grade G
-      WHERE S.Sno=G.Sno AND S.Sname='李勇'))
-    AND Sname != '李勇';
+      WHERE S.Sno = G.Sno AND S.Sname = '李勇'))
+  AND Sname <> '李勇';
 
 -- (3) 找出年龄介于学生李勇和25岁之间的学生信息(已知李勇年龄小于25岁);
 SELECT * FROM Student
-  WHERE Sage BETWEEN (SELECT Sage FROM Student WHERE Sname='李勇') AND 25;
--- BETWEEN...AND...包含范围边界
+  WHERE Sage BETWEEN (SELECT Sage FROM Student WHERE Sname = '李勇') AND 25;
+--- BETWEEN...AND...查询结果包含范围左右边界
 
 -- (4) 找出选修了课程操作系统的学生学号和姓名;
 SELECT S.Sno, Sname FROM Student S, Course C, Grade G
@@ -313,7 +314,7 @@ SELECT S.Sno, Sname FROM Student S, Course C, Grade G
 -- (5) 找出没有选修1号课程的学生姓名;
 SELECT Sname FROM Student
   WHERE Sno NOT IN (SELECT Sno FROM Grade WHERE Cno = 1);
--- 相关子查询
+--- 相关子查询
 SELECT Sname FROM Student S
   WHERE NOT EXISTS (SELECT Sno FROM Grade
     WHERE S.Sno = Sno AND Cno = 1);
@@ -322,9 +323,8 @@ SELECT Sname FROM Student S
 SELECT Sname FROM Student S
   WHERE NOT EXISTS (SELECT * FROM Course C
     WHERE NOT EXISTS (SELECT * FROM Grade G
-      WHERE G.Cno=C.Cno AND G.Sno=S.Sno));
--- (找出没有一门课程是其未选修的学生姓名)
-
+      WHERE G.Cno = C.Cno AND G.Sno = S.Sno));
+--- (找出没有一门课程是其未选修的学生姓名)
 ```
 
 ```SQL
@@ -340,7 +340,7 @@ SELECT * FROM Student
     ORDER BY Clno, Sage DESC;
 
 -- (3) 求每个课程号及相应的选课人数;
-SELECT Cno, 选课人数=COUNT(Sno) FROM Grade
+SELECT Cno, COUNT(Sno) FROM Grade
     GROUP BY Cno;
 
 -- (4) 查询选修了3门以上课程的学生学号.
@@ -361,23 +361,31 @@ UPDATE Grade
 
 -- (2) 删除2001级计算机软件的全体学生的选课记录;
 DELETE FROM Grade
-    WHERE Sno IN
-    (SELECT S.Sno FROM Student S, Class C
-        WHERE S.Clno = C.Clno AND Speciality = '计算机软件');
+  WHERE Sno IN (SELECT S.Sno FROM Student S, Class C
+    WHERE S.Clno = C.Clno AND Speciality = '计算机软件');
 
--- (3) 学生李勇已退学, 从数据库中删除有关他的记录
-UPDATE Class -- (李勇是班长Monitor, 不过也不知道怎么办)
-    SET Number = Number-1 -- 李勇所在班级人数-1
-    WHERE Clno = (SELECT Clno FROM Student WHERE Sname = '李勇');
-DELETE FROM Grade, Student
-    WHERE Sno = (SELECT Sno FROM Student WHERE Sname = '李勇');
+-- (3) 学生李勇已退学, 从数据库中删除有关他的记录;
+UPDATE Class -- 如果李勇是某班班长(Monitor), 则将该班 Monitor 属性置空以保证参照完整性
+  SET Monitor = NULL
+  WHERE Monitor = (SELECT Sno FROM Student WHERE Sname = '李勇');
+UPDATE Class -- 更新李勇所在班级人数
+  SET Number = Number - 1
+  WHERE Clno = (SELECT Clno FROM Student WHERE Sname = '李勇');
+DELETE FROM Grade -- 先删引用
+  WHERE Sno = (SELECT Sno FROM Student WHERE Sname = '李勇');
+DELETE FROM Student -- 再删本体
+  WHERE Sname = '李勇';
 
--- (4) 对每个班, 求学生的平均年龄, 并把结果存入数据库
+-- (4) 对每个班, 求学生的平均年龄, 并把结果存入数据库.
+--- 写法1: 建立视图存放查询结果
+CREATE VIEW Cl_avg_age
+  AS SELECT Clno, AVG(Sage) AS avg_age FROM Student;
+--- 写法2: 在原 Class 表中增加一列属性存放查询结果
 ALTER TABLE Class
-    ADD Clage smallint NULL;
-UPDATE Class C
-    SET Clage = (SELECT AVG(Sage) FROM Student WHERE Clno=C.Clno GROUP BY Clno)
-    WHERE C.Clno IN (SELECT Clno FROM Class);
+  ADD avg_age smallint NULL;
+UPDATE Class
+  SET avg_age = (SELECT AVG(Sage) FROM Student
+    GROUP BY Clno HAVING Clno = Class.Clno);
 ```
 
 # 视图的建立及操作
@@ -385,31 +393,33 @@ UPDATE Class C
 ```SQL
 -- 习题3.16
 
--- (1) 建立01311班选修了1号课程的学生视图Stu_01311_1
+-- (1) 建立 01311 班选修了1号课程的学生视图 Stu_01311_1
 CREATE VIEW Stu_01311_1
-    AS SELECT * FROM Student WHERE Sno IN
-        (SELECT S.Sno FROM Student S, Grade G
-            WHERE S.Sno = G.Sno
-                AND S.Clno = '01311'
-                AND G.Cno = 1);
+  AS SELECT * FROM Student
+    WHERE Sno IN (SELECT S.Sno
+      FROM Student S, Grade G
+      WHERE S.Sno = G.Sno
+        AND S.Clno = '01311'
+        AND G.Cno = 1);
 
--- (2) 建立01311班选修了1号课程并且成绩不及格的学生视图Stu_01311_2
+-- (2) 建立 01311 班选修了 1 号课程并且成绩不及格的学生视图 Stu_01311_2
 CREATE VIEW Stu_01311_2
-    AS SELECT * FROM Student WHERE Sno IN
-        (SELECT S.Sno FROM Student S, Grade G
-            WHERE S.Sno = G.Sno
-                AND S.Clno = '01311'
-                AND G.Cno = 1
-                AND Gmark < 60);
+  AS SELECT * FROM Student
+    WHERE Sno IN (SELECT S.Sno
+      FROM Student S, Grade G
+      WHERE S.Sno = G.Sno
+        AND S.Clno = '01311'
+        AND G.Cno = 1
+        AND Gmark < 60);
 
--- (3) 建立视图Stu_year, 由学生学号, 姓名, 出生年份组成
+-- (3) 建立视图 Stu_year , 由学生学号, 姓名, 出生年份组成
 CREATE VIEW Stu_year(Sno, Sname, BirthYear)
-    AS SELECT Sno, Sname, 2018-Sage FROM Student;
+    AS SELECT Sno, Sname, (2018 - Sage) FROM Student;
 
--- (4) 查询1983年以后出生的学生姓名
-SELECT Sname FROM Stu_year WHERE BirthYear > 1983;
+-- (4) 查询 1990 年以后出生的学生姓名
+SELECT Sname FROM Stu_year WHERE BirthYear > 1990;
 
--- (5) 查询01311班选修了1号课程并且成绩不及格的学生的学号, 姓名, 出生年份
+-- (5) 查询 01311 班选修了 1 号课程并且成绩不及格的学生的学号, 姓名, 出生年份
 SELECT * FROM Stu_year
     WHERE Sno IN (SELECT Sno FROM Stu_01311_2);
 ```
@@ -420,43 +430,42 @@ SELECT * FROM Stu_year
 -- 在查询分析器(Query Analyzer)中创建以下触发器, 并验证其语法的正确性:
 
 -- 1.
--- 为Student表创建一插入和更新触发器tri_ins_upd_student:
--- 当插入新的学生或者更新学生所在班级号时, 检查该班级的学生人数有没有超过40人 ,
--- 如果没有则插入或者更新成功, 如果超出40人, 操作回滚.
+-- 为 Student 表创建一插入和更新触发器 tri_ins_upd_student:
+-- 当插入新的学生或者更新学生所在班级号时, 检查该班级的学生人数有没有超过 40 人 ,
+-- 如果没有则插入或者更新成功, 如果超出 40 人, 操作回滚.
 CREATE TRIGGER tri_ins_upd_student
-    ON Student
-    AFTER INSERT,UPDATE
+  ON Student
+  AFTER INSERT,UPDATE
 AS
-    IF 40 < (SELECT Number FROM Class
-            WHERE Clno = (SELECT Clno FROM inserted))
-        ROLLBACK TRANSACTION
+  IF 40 < (SELECT Number FROM Class WHERE Clno = (SELECT Clno FROM inserted))
+    ROLLBACK TRANSACTION
 
 -- 2.
--- 为数据库GradeManager创建一存储过程ap_returncount:
+-- 为数据库 GradeManager 创建一存储过程 ap_returncount:
 -- 功能是: 输入学生学号, 输出该学生所在的班级人数.
 CREATE PROCEDURE ap_returncount
-    @Sno char(7)
+  @Sno char(7)
 AS
-    DECLARE @count int
-    SELECT @count=Number FROM Class
-        WHERE Clno = (SELECT Clno FROM Student WHERE Sno = @Sno)
-    RETURN @count
+  DECLARE @count int
+  SELECT @count = Number FROM Class
+    WHERE Clno = (SELECT Clno FROM Student WHERE Sno = @Sno)
+  RETURN @count
 
 
 -- 3.
--- 在Enterprise Manager中展开GradeManager数据库, 展开Trigger,
--- 查看刚创建的触发器tri_ins_upd_student, 修改触发器定义,
--- 使之调用存储过程ap_returncount实现原来的功能.
+-- 在 Enterprise Manager 中展开 GradeManager 数据库, 展开 Trigger,
+-- 查看刚创建的触发器 tri_ins_upd_student, 修改触发器定义,
+-- 使之调用存储过程 ap_returncount 实现原来的功能.
 CREATE TRIGGER tri_ins_upd_student
-    ON Student
-    AFTER INSERT,UPDATE
+  ON Student
+  AFTER INSERT,UPDATE
 AS
-    DECLARE @count int
-    EXECUTE @count = ap_returncount (SELECT Sno FROM inserted)
-    IF 40 < @count
-        ROLLBACK TRANSACTION
+  DECLARE @count int
+  EXECUTE @count = ap_returncount (SELECT Sno FROM inserted)
+  IF 40 < @count
+    ROLLBACK TRANSACTION
 ```
 
 # 参考资料
 
-教材: [《数据库原理(第四版)》 张红娟【摘要 书评 试读】图书 - 亚马逊](https://www.amazon.cn/dp/B01KUN09NE)
+教材: [《数据库原理(第四版)》张红娟 - 亚马逊](https://www.amazon.cn/dp/B01KUN09NE)
