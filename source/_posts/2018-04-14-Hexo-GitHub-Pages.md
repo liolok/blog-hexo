@@ -106,6 +106,12 @@ Windows平台上可能会有如下两个WARN, 提示可选依赖`fsevent`安装�
 
 `git config --global user.email "注册邮箱"`
 
+## 为博客添加部署插件
+
+```
+npm install hexo-deployer-git --save
+```
+
 ## 修改博客的部署配置
 
 详细内容请参考官方文档中的[部署](https://hexo.io/zh-cn/docs/deployment.html)
