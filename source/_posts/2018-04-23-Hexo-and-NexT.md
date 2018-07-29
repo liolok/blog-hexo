@@ -323,7 +323,7 @@ reading_progress:
 在`blogname`根目录下运行: 
 
 ```bash
-git clone https://github.com/theme-next/theme-next-three source/lib/three themes/next/source/lib/three
+git clone https://github.com/theme-next/theme-next-three themes/next/source/lib/three
 ```
 
 ### 更新
