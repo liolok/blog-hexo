@@ -136,7 +136,7 @@ deploy:
 
 ## 部署站点到代码仓库
 
-在博客目录下使用 `hexo deploy -generate` 或其简写 `hexo -d -g`, 让 Hexo 在生成静态站点文件后, 将其部署到代码仓库.
+在博客目录下使用 `hexo deploy -generate` 或其简写 `hexo d -g`, 让 Hexo 在生成静态站点文件后, 将其部署到代码仓库.
 
 ![部署博客](2018-04-14-Hexo-GitHub-Pages/hexo_deploy_after_generate.png)
 
