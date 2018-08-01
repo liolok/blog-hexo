@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../source/_data"
+			"path": "../themes/next"
 		},
 		{
-			"path": "../themes/next"
+			"path": "../source/data/"
 		}
 	],
 	"settings": {}
