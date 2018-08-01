@@ -3,7 +3,7 @@ title: Hexo + GitHub Pages 独立博客搭建
 tags: [Hexo, Github Pages, 独立博客, 博客搭建]
 description: <center>基于 Hexo 框架和 GitHub Pages 托管服务的独立博客搭建教程</center>
 date: 2018-04-14 10:41:26
-updated: 2018-07-30 20:50:00
+updated: 2018-08-01 10:30:00
 ---
 
 # 本地 - Hexo 博客框架
@@ -164,7 +164,7 @@ deploy:
 
 ## 静态博客 vs. 动态博客
 
-前一节提到的博客平台显然都是动态博客, 不过自建独立博客是两者均可选择的. 大名鼎鼎的 WordPress 就是一个很多人都在用的动态博客程序, 那么相比于动态博客, 静态博客有哪些优劣呢?
+前一节提到的博客平台显然都是动态博客, 不过自建独立博客是两者均可选择的, 大名鼎鼎的 WordPress 就是一个很多人都在用的动态博客程序. 那么相比于动态博客, 静态博客有哪些优劣呢?
 
 ### 优势
 
@@ -176,14 +176,14 @@ deploy:
 
 ### 劣势
 
-据笔者需求来讲, 静态博客目前只有下面一个缺点.
-
 #### 评论系统
 
-由于没有数据库(这一点同时也使得静态博客访问速度更快), 静态博客不支持用户登录, 没有内置的评论系统, 解决方案有下面两种:
+由于没有数据库(这一点同时也使得静态博客访问速度更快), 静态博客不支持用户登录, 没有内置的评论系统.
 
-- 使用第三方评论服务, 比如: [Disqus - The #1 way to build an audience on your website](https://disqus.com/);
-- 对于使用 GitHub Pages 的方案, 可以就近使用 GitHub 的 issues 功能. 已有的 Hexo 插件有 [Gitment](https://github.com/imsun/gitment) 和 [Gitalk](https://github.com/gitalk/gitalk), 前者有一定问题且已停更, 本博客正在使用后者, 参考另一篇文章: [Hexo + Gitalk 评论系统](../Hexo-and-Gitalk).
+这里只给出笔者所知的两方面解决方案, 也欢迎热心读者补充:
+
+- 使用第三方评论服务, 比如 [Disqus](https://disqus.com/): 支持各种社交平台账号登录, 也支持匿名评论(需填写联系邮箱), 不过不支持使用 Markdown, 笔者也因此选择了下面的方案;
+- 对于使用 GitHub Pages 的方案, 完全可以就地使用 repo 的 issues 实现评论系统. 现有的 Hexo 插件有两款: [Gitment](https://github.com/imsun/gitment) 和 [Gitalk](https://github.com/gitalk/gitalk), 前者有一定问题且已停更, 本博客正在使用后者, 参考另一篇文章: [Hexo + Gitalk 评论系统](../Hexo-and-Gitalk).
 
 ## 关于折腾
 
