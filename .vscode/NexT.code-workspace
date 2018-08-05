@@ -4,7 +4,7 @@
 			"path": "../themes/next"
 		},
 		{
-			"path": "../source/data/"
+			"path": "../source/_data/"
 		}
 	],
 	"settings": {}
