@@ -45,6 +45,7 @@ Linux 内核官方网站: The Linux Kernel Archives(https://www.kernel.org/)
 但如果想要硬核一点, 方法其实也有很多. 下面给出一种简单的在终端下使用 `wget` 从网站获取下载链接并进行下载和解压的方法(注意此时终端应工作在内核构建目录下): 
 
 ```shell
+$ sudo pacman -S wget # ensure wget package is installed
 $ wget https://www.kernel.org/ -O www-kernel-org.html # get website's source code
 $ gedit www-kernel-org.html # get download link with editor, see screenshot below.
 ```
@@ -55,7 +56,6 @@ $ gedit www-kernel-org.html # get download link with editor, see screenshot belo
 > 建议选择较新的长期支持版(longterm)归档压缩包, 以在后续步骤中使用更新的特性, 笔者选择的是届时最新的 `4.14.56`.
 
 ```shell
-$ sudo pacman -S wget # ensure wget package is installed
 $ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.56.tar.xz # tarball
 $ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.56.tar.sign # pgp
 $ unxz linux-4.14.56.tar.xz # uncompress tarball to get the .tar archive
