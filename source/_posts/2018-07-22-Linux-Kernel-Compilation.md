@@ -146,7 +146,7 @@ $ time make -j9 # compile the kernel
 > 注意! 接下来的步骤均需要以 root 身份进行操作, 使用 `su` 并输入 root 密码切换至 root , 命令以 `#` 开头而不是 `$`.
 
 ```shell
-# make install_modules # compile the modules
+# make modules_install # compile the modules
 ```
 
 ## 复制内核到 /boot 目录
