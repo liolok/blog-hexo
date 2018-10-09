@@ -1,4 +1,4 @@
-# [liolok's GitHub Pages](https://liolok.github.io)
+# [LIOLOG](https://liolok.github.io)
 
 - Powered by blog framework [Hexo](https://hexo.io/) & theme [NexT](https://github.com/theme-next/hexo-theme-next/)
 
