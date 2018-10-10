@@ -224,6 +224,12 @@ sidebar:
   position: left
   #position: right
 
+  # Manual define the sidebar width.
+  # If commented, will be default for:
+  # Muse | Mist: 320
+  # Pisces | Gemini: 240
+  #width: 300
+
   # Sidebar Display, available value (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
   #  - always  expand for all pages automatically
@@ -362,15 +368,6 @@ highlight_theme: normal
 # Enable "cheers" for archive page.
 cheers_enabled: false
 
-# Manual define the max content width
-# !!Only available for Gemini Scheme currently
-# Leave it empty for the default 75% (suggest not less than 1000px)
-#max_content_width: 1000px
-
-# Manual define the sidebar width
-# !!Only available for Gemini Scheme currently
-# Leave it empty for the default 240
-sidebar_width:
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -487,9 +484,6 @@ disqus:
   count: true
   lazyload: false
 
-# Hypercomments
-#hypercomments_id:
-
 # changyan
 changyan:
   enable: false
@@ -501,7 +495,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
   appid:  # your leancloud application appid
   appkey:  # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
@@ -510,11 +504,7 @@ valine:
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
-
-
-# Support for youyan comments system.
-# You can get your uid from http://www.uyan.cc
-#youyan_uid: your uid
+  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -543,13 +533,7 @@ gitment:
 #baidushare:
 ##  type: button
 
-# Share
-# This plugin is more useful in China, make sure you known how to use it.
-# And you can find the use guide at official webiste: http://www.jiathis.com/.
-# Warning: JiaThis does not support https.
-#jiathis:
-  ##uid: Get this uid from http://www.jiathis.com/
-
+# addthis Share, see: https://www.addthis.com/
 #add_this_id:
 
 # NeedMoreShare2
@@ -594,6 +578,10 @@ needmoreshare2:
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
 #yandex_site_verification:
+
+# Baidu Webmaster tools verification setting
+# See: https://ziyuan.baidu.com/site/
+#baidu_site_verification:
 
 # CNZZ count
 #cnzz_siteid:
@@ -920,19 +908,15 @@ vendors:
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
 
-  # three
+  # Internal version: 1.0.0
+  # See: https://github.com/theme-next/theme-next-three
+  # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js
+  # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js
+  # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
+  # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js
   three:
-
-  # three_waves
-  # https://github.com/jjandxa/three_waves
   three_waves:
-
-  # three_waves
-  # https://github.com/jjandxa/canvas_lines
   canvas_lines:
-
-  # three_waves
-  # https://github.com/jjandxa/canvas_sphere
   canvas_sphere:
 
   # Internal version: 1.0.0
