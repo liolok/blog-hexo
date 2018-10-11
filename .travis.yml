@@ -1,36 +1,37 @@
-language: node_js  #设置语言
+language: node_js  # 指定部署环境
 
-node_js: stable  #设置相应的版本
+node_js: stable  # 稳定版
 
-# 开始构建
+cache:
+  directories:
+    - node_modules  # 加快构建速度
+
+branches:
+  only:
+    - source  # 只监测博客源码所在分支
+
+env:
+ global:
+   - GH_REF: github.com/liolok/liolok.github.io.git  # 设置仓库
+
+# 开始部署
 before_install:
-  - export TZ='Asia/Shanghai'
+  - export TZ='Asia/Shanghai'  # 修正时区，避免文章时间信息错误
   
 install:
-  - npm install  #配置Hexo环境
+  - npm install  # 搭建部署环境
 
 script:
-  - hexo cl  #清除
-  - hexo g  #生成
-  - gulp  #压缩
+  - hexo cl  # 清除缓存文件(./db.json)和已生成的静态文件(./public/**)
+  - hexo g   # 生成静态文件
+  - gulp     # 压缩静态文件
 
 after_script:
   - cd ./public
   - git init
-  - git config user.name "liolok"  #用户名
-  - git config user.email "liolokit@gmail.com"  #邮箱
+  - git config user.name "liolok"  # 用户名
+  - git config user.email "liolokit@gmail.com"  # 邮箱
   - git add .
   - git commit -m "Site deployed by Travis CI"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置Token的名称
-# 结束构建
-
-branches:
-  only:
-    - source  #只监测源码分支
-env:
- global:
-   - GH_REF: github.com/liolok/liolok.github.io.git  #设置GH_REF
-
-cache:
-  directories:
-    - node_modules #加快构建速度
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  # 其中 GH_TOKEN 为 Travis 后台配置的 Token 名称
+# 结束部署
