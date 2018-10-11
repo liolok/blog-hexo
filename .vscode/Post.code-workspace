@@ -1,6 +1,9 @@
 {
 	"folders": [
 		{
+			"path": "../source/_drafts"
+		},
+		{
 			"path": "../source/_posts"
 		}
 	],
