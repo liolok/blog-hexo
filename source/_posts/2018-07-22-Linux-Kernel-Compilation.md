@@ -388,7 +388,7 @@ int main(void)
 <center>运行程序测试系统调用</center>
 
 从测试结果中可以看出:
-- 进程的 `nice` 和 `prio` 默认值分别为 `0` 和 `20`, 两者的关系是 `nice` + `prio` = `20`, 参见 [Linux source code: include/linux/sched/prio.h (v4.14.56) - Bootlin](https://elixir.bootlin.com/linux/v4.14.56/source/include/linux/sched/prio.h);
+- 进程的 `nice` 和 `prio` 默认值分别为 `0` 和 `20`, 两者的关系是 `prio` = `nice` + `20`, 参见 [Linux source code: include/linux/sched/prio.h (v4.14.56) - Bootlin](https://elixir.bootlin.com/linux/v4.14.56/source/include/linux/sched/prio.h);
 - 超出定义范围的设定不会改变 `nice` 值, 这是因为在调用的 `set_user_nice()` 中对参数值进行了[检验](https://elixir.bootlin.com/linux/v4.14.56/source/kernel/sched/core.c#L3783), 当其超出范围时将会直接返回, 而不会对继续进行操作.
 
 
