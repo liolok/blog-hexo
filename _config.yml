@@ -84,3 +84,37 @@ deploy:
 ## Reference: https://github.com/hexojs/hexo/issues/1981#issuecomment-229309844
 marked:
   smartypants: false
+
+# Plugin: PWA(Progressive Web App)
+## Docs: https://github.com/lavas-project/hexo-pwa#options
+pwa:
+  manifest:
+    path: /manifest.json
+    body:
+      name: liolok's logs
+      short_name: LIOLOG
+      lang: zh-CN
+      icons:
+        - src: /images/sakamoto/launcher_192.png
+          sizes: 192x192
+          type: image/png
+        - src: /images/sakamoto/launcher_512.png
+          sizes: 512x512
+          type: image/png
+      theme_color: '#f5f5f5'
+      background-color: '#ffffff'
+      display: standalone
+  serviceWorker:
+    path: /sw.js
+    preload:
+      urls:
+        - /
+      posts: 10 # same with index_generator.per_page, precache first page posts?
+    opts:
+      networkTimeoutSeconds: 5
+    routes:
+      - pattern: !!js/regexp /.*\.(js|css|jpg|jpeg|png|gif)$/
+        strategy: cacheFirst
+      - pattern: !!js/regexp /\//
+        strategy: networkFirst
+  priority: 5
