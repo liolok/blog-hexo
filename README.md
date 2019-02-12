@@ -6,4 +6,6 @@
 
 - Built by [Travis CI](https://travis-ci.org/)
 
-- [LIOLOG](https://liolok.github.io) [![Build Status](https://travis-ci.org/liolok/liolok.github.io.svg?branch=source)](https://travis-ci.org/liolok/liolok.github.io)
+- [![Build Status](https://travis-ci.org/liolok/liolok.github.io.svg?branch=source)](https://travis-ci.org/liolok/liolok.github.io)
+
+- [LIOLOG](https://liolok.github.io)
