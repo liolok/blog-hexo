@@ -6,7 +6,7 @@
 # If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
 # And if true, all config from default NexT `_config.yml` must be copied into `next.yml`. Use if you know what you are doing.
 # Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
-override: false
+override: true
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
@@ -45,10 +45,10 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: /images/sakamoto/favicon.png
+  medium: /images/sakamoto/favicon.png
+  #apple_touch_icon: /images/apple-touch-icon-next.png
+  #safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -60,13 +60,13 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2018
 
   # Icon between year and copyright info.
   icon:
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
-    name: user
+    name: paper-plane
     # If you want to animate the icon, set it to true.
     animated: false
     # Change the color of icon, using Hex Code.
@@ -102,8 +102,8 @@ footer:
 # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 creative_commons:
   license: by-nc-sa
-  sidebar: false
-  post: false
+  sidebar: true
+  post: true
 
 
 # ---------------------------------------------------------------
@@ -116,14 +116,14 @@ creative_commons:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
 index_with_subtitle: false
 
 # Automatically add external URL with BASE64 encrypt & decrypt.
-exturl: false
+exturl: true
 
 
 # ---------------------------------------------------------------
@@ -175,7 +175,9 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
+social:
+  Gmail: bWFpbHRvOmxpb2xvay5pdEBnbWFpbC5jb20= || envelope-square
+  Telegram: aHR0cHM6Ly90Lm1lL2xpb2xvaw== || telegram
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
@@ -212,7 +214,7 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /images/sakamoto/avatar.jpg
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -258,7 +260,7 @@ sidebar:
   # Scroll percent label in b2t button.
   scrollpercent: false
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
@@ -357,13 +359,13 @@ post_edit:
 # ---------------------------------------------------------------
 
 # Disable Baidu tranformation on mobile devices.
-disable_baidu_tranformation: false
+disable_baidu_tranformation: true
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
-android_chrome_color: "#222"
+android_chrome_color: "#fff"
 
 # Custom Logo
 # Do not support Scheme Mist currently.
@@ -380,7 +382,7 @@ custom_logo:
 highlight_theme: normal
 
 # Enable "cheers" for archive page.
-cheers_enabled: true
+cheers_enabled: false
 
 
 # ---------------------------------------------------------------
@@ -445,7 +447,7 @@ font:
 
 # Math Equations Render Support
 math:
-  enable: false
+  enable: true
 
   # Default(true) will load mathjax/katex script on demand
   # That is it only render those page who has `mathjax: true` in Front Matter.
@@ -803,9 +805,9 @@ tabs:
 # Reading progress bar
 # Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
-  enable: false
+  enable: true
   color: "#37c6c0"
-  height: 2px
+  height: 3px
 
 
 #! ---------------------------------------------------------------
