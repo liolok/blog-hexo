@@ -118,3 +118,8 @@ pwa:
       - pattern: !!js/regexp /\//
         strategy: networkFirst
   priority: 5
+
+# Plugin: Sitemap Generator
+## Docs: https://github.com/hexojs/hexo-generator-sitemap#options
+sitemap:
+  path: sitemap.xml
