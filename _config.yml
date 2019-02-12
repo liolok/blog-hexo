@@ -79,3 +79,8 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# Fix issue: halfwidth quotation marks rendered to fullwidth
+## Reference: https://github.com/hexojs/hexo/issues/1981#issuecomment-229309844
+marked:
+  smartypants: false
