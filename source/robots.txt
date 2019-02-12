@@ -1,0 +1,18 @@
+User-agent: *
+
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /links/
+Allow: /about/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /lib/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://liolok.github.io/sitemap.xml
