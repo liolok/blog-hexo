@@ -1,0 +1,34 @@
+language: node_js
+
+node_js: lts/*
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - source
+
+env:
+ global:
+   - GH_REF: github.com/liolok/liolok.github.io.git
+
+before_install:
+  - export TZ='Asia/Shanghai'  # ensure post datetime accurate
+
+install:
+  - npm install
+
+script:
+  - hexo cl
+  - hexo g
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "liolok"
+  - git config user.email "liolokit@gmail.com"
+  - git add .
+  - git commit -m "Site deployed by Travis CI"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
