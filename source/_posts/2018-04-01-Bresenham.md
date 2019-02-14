@@ -1,7 +1,6 @@
 ---
 title: Bresenham 直线算法及其决策参数
-tags: [CG, OpenGL, Bresenham]
-description: <center>Bresenham 直线绘制算法演变，以及关于其决策参数的思考。</center>
+tags: [CG, OpenGL]
 date: 2018-04-01
 updated: 2018-04-19
 ---
@@ -27,7 +26,9 @@ void bresenhamLineOriginal(int x0, int y0, int x1, int y1)
 
 测试数据及效果图如下：
 
-![简单版本的 Bresenham 算法效果图](Simple-Bresenham-Result.png "简单版本的 Bresenham 算法效果图")
+![简单版本的 Bresenham 算法效果图](./2018-04-01-Bresenham/Simple-Bresenham-Result.png)
+
+<!-- more -->
 
 ## 推广算法
 
@@ -55,7 +56,7 @@ inline void swap(int &a, int &b) { int temp = a; a = b; b = temp; }
 /* Bresenham 画线，起点为(x0,y0)，终点为(x1,y1) */
 void BresenhamLine(int x0, int y0, int x1, int y1)
 {
-    enum { X, Y, XY };  // 枚举 0，1，2，提高可读性
+    enum { X, Y, XY }; // 枚举 0，1，2，提高可读性
 
     /* XY 坐标距离 distance，用于更新决策参数 dp */
     int d[XY] = { abs(x1 - x0), abs(y1 - y0) };
@@ -64,48 +65,48 @@ void BresenhamLine(int x0, int y0, int x1, int y1)
     int s[XY] = { sign(x1 - x0), sign(y1 - y0) };
 
     /* 考虑是否变换坐标轴，以处理斜率绝对值大于 1 的直线 */
-    bool flag = (d[X] < d[Y]);  // 斜率绝对值大于 1 则需要变换
-    if (flag) swap(d[X], d[Y]);  // 需要变换则交换 XY 轴坐标距离
+    bool flag = (d[X] < d[Y]); // 斜率绝对值大于 1 则需要变换
+    if (flag) swap(d[X], d[Y]); // 需要变换则交换 XY 轴坐标距离
 
-    int cur[XY] = { x0, y0 };  // cursor，坐标光标，初始化为起点
-    int dp = 2 * d[Y] - d[X];  // decision parameter，决策参数
+    int cur[XY] = { x0, y0 }; // cursor，坐标光标，初始化为起点
+    int dp = 2 * d[Y] - d[X]; // decision parameter，决策参数
     for (int i = 0; i <= d[X]; ++i)  // 光标遍历，逐个画点
     {
         glVertex2i(cur[X], cur[Y]);
         if (dp >= 0)  // 判断决策参数
         {
-            cur[!flag] += s[!flag];  // 若未变换，更新纵坐标
-            dp -= 2 * d[X];  // 修正决策参数
+            cur[!flag] += s[!flag]; // 若未变换，更新纵坐标
+            dp -= 2 * d[X]; // 修正决策参数
         }
-        cur[flag] += s[flag];  // 若未变换，更新横坐标
-        dp += 2 * d[Y];  // 更新决策参数
+        cur[flag] += s[flag]; // 若未变换，更新横坐标
+        dp += 2 * d[Y]; // 更新决策参数
     }
 }
 
 void display()
 {
-    glClearColor(1.0, 1.0, 1.0, 0.0);  // 白色背景
-    glClear(GL_COLOR_BUFFER_BIT);  // 填充背景色
-    glColor3f(0.0, 1.0, 1.0);  // 蓝绿色笔画
-    glPointSize(5.0f);  // 笔画粗细
-    glBegin(GL_POINTS);  // 开始绘制
+    glClearColor(1.0, 1.0, 1.0, 0.0); // 白色背景
+    glClear(GL_COLOR_BUFFER_BIT); // 填充背景色
+    glColor3f(0.0, 1.0, 1.0); // 蓝绿色笔画
+    glPointSize(5.0f); // 笔画粗细
+    glBegin(GL_POINTS); // 开始绘制
 
-    BresenhamLine(64, 128, 64, 128);  // 点
+    BresenhamLine(64, 128, 64, 128); // 点
 
-    BresenhamLine(000, 000, 000, 500);  // k 不存在
-    BresenhamLine(250, 000, 250, 500);  // k 不存在
-    BresenhamLine(500, 000, 500, 500);  // k 不存在
-    BresenhamLine(000, 000, 500, 000);  // k = 0
-    BresenhamLine(000, 250, 500, 250);  // k = 0
-    BresenhamLine(000, 500, 500, 500);  // k = 0
-    BresenhamLine(000, 000, 500, 250);  // k = 0.5
-    BresenhamLine(000, 250, 500, 500);  // k = 0.5
-    BresenhamLine(000, 000, 500, 500);  // k = 1
-    BresenhamLine(000, 250, 500, 000);  // k = -0.5
-    BresenhamLine(000, 500, 500, 250);  // k = -0.5
-    BresenhamLine(000, 500, 500, 000);  // k = -1
+    BresenhamLine(000, 000, 000, 500); // k 不存在
+    BresenhamLine(250, 000, 250, 500); // k 不存在
+    BresenhamLine(500, 000, 500, 500); // k 不存在
+    BresenhamLine(000, 000, 500, 000); // k = 0
+    BresenhamLine(000, 250, 500, 250); // k = 0
+    BresenhamLine(000, 500, 500, 500); // k = 0
+    BresenhamLine(000, 000, 500, 250); // k = 0.5
+    BresenhamLine(000, 250, 500, 500); // k = 0.5
+    BresenhamLine(000, 000, 500, 500); // k = 1
+    BresenhamLine(000, 250, 500, 000); // k = -0.5
+    BresenhamLine(000, 500, 500, 250); // k = -0.5
+    BresenhamLine(000, 500, 500, 000); // k = -1
 
-    glEnd();  // 结束绘制
+    glEnd(); // 结束绘制
     glFlush();
 }
 
@@ -125,7 +126,7 @@ int main(int argc, char **argv)
 
 测试数据及效果图如下：
 
-![推广后的 Bresenham 算法效果图](Bettrer-Bresenham-Result.png "推广后的 Bresenham 算法效果图")
+![推广后的 Bresenham 算法效果图](./2018-04-01-Bresenham/Bettrer-Bresenham-Result.png)
 
 ## 决策参数
 
@@ -217,8 +218,8 @@ while(x<=x2) {
 
 <!-- END TODO -->
 
-## 参考
+## 参考文章
 
-测试数据参考：https://blog.csdn.net/demonliuhui/article/details/52985949
+测试数据：https://blog.csdn.net/demonliuhui/article/details/52985949
 
-推广算法参考：[Generalized Bresenham's Line Drawing Algorithm using OpenGL](http://code-blocks.blogspot.hk/2014/12/generalized-bresenhams-line-drawing.html)
+推广算法：[Generalized Bresenham's Line Drawing Algorithm using OpenGL](https://code-blocks.blogspot.hk/2014/12/generalized-bresenhams-line-drawing.html)
