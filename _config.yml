@@ -53,6 +53,7 @@ index_generator:
   path: ''
   per_page: 5
   order_by: -date
+  single_language_index: true
 
 # Category & Tag
 default_category: uncategorized
