@@ -137,7 +137,9 @@ exturl: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 # External url should start with http:// or https://
 menu:
-  home: / || home
+  # home: / || home
+  home-en: /en/ || home
+  home-zh-CN: /zh-CN/ || language
   #about: /about/ || user
   #tags: /tags/ || tags
   #categories: /categories/ || th
