@@ -1,6 +1,7 @@
 ---
 title: Bézier 曲线及其 deCasteljau 剖分算法
 tags: [CG, OpenGL]
+# description: 当年还在用 Windows XP 的时候，就有一个屏保叫“贝塞尔曲线”，我们今天就来看一看它的基本原理以及简单绘制。
 date: 2018-04-28 12:50:32
 updated: 2018-04-28 23:59:59
 mathjax: true
