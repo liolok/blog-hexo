@@ -8,15 +8,16 @@ subtitle: liolok's logs
 description: 岂有文章倾社稷，从来奸佞覆乾坤。
 keywords: [LIOLOG, liolok]
 author: 李皓奇
-language: zh-CN
+language: [en, zh-CN]
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://liolok.github.io/
 root: /
-permalink: :title/
+permalink: :lang/:title/
 permalink_defaults:
+  lang: en
 
 # Directory
 source_dir: source
@@ -29,7 +30,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :year-:month-:day-:title.md # File name of new posts
+new_post_name: :year-:month/:lang/:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
