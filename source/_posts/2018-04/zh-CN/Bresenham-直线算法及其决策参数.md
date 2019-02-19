@@ -1,6 +1,7 @@
 ---
 title: Bresenham 直线算法及其决策参数
 tags: [CG, OpenGL]
+lang: zh-CN
 date: 2018-04-01
 updated: 2018-04-19
 ---
@@ -26,7 +27,7 @@ void bresenhamLineOriginal(int x0, int y0, int x1, int y1)
 
 测试数据及效果图如下：
 
-![简单版本的 Bresenham 算法效果图](./2018-04-01-Bresenham/Simple-Bresenham-Result.png)
+![简单版本的算法效果图](./Bresenham-直线算法及其决策参数/简单版本的算法效果图.png "简单版本的算法效果图")
 
 <!-- more -->
 
@@ -126,7 +127,7 @@ int main(int argc, char **argv)
 
 测试数据及效果图如下：
 
-![推广后的 Bresenham 算法效果图](./2018-04-01-Bresenham/Bettrer-Bresenham-Result.png)
+![推广后的算法效果图](./Bresenham-直线算法及其决策参数/推广后的算法效果图.png "推广后的算法效果图")
 
 ## 决策参数
 
