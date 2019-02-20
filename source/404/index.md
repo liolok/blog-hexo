@@ -6,4 +6,10 @@ comments: false
 sitemap: false
 ---
 
-![404 Not Found](/images/sakamoto/asleep.gif "404 Not Found")
+<center>Please look around in archives if the article link is invalid.</center>
+
+<center>如文章链接已失效，请在归档（Archives）页面找找看。</center>
+
+---
+
+<center>![404 Not Found](/images/sakamoto/asleep.gif "404 Not Found")</center>
