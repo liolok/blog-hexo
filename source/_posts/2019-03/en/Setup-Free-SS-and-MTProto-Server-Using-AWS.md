@@ -2,7 +2,7 @@
 title: Setup Free SS and MTProto Server Using AWS
 tags: [Free, Shadowsocks, MTProto, VPS]
 date: 2019-03-23 09:30:11
-updated: 2019-03-23 14:30:11
+updated: 2019-03-23 17:08:11
 ---
 
 # Signup an AWS account
@@ -26,7 +26,9 @@ We will create an [Arch Linux][0] EC2 instance in this article, and setup a [V2R
 
 # Create EC2 Instance
 
-Visit [this link][2] (from [ArchWiki][3]) and choose an instance by region.
+## Choose Image
+
+Visit [this link][2] (from [ArchWiki][3]) and choose an image by region.
 
 ![Choose Image](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Choose-Image.png)
 
@@ -53,7 +55,7 @@ There would be only one free type so we actually have no choice, just skip to st
 
 ![Download Key File and Launch](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Download-Key-File-and-Launch.png)
 
-This `ArchVPS.pem` private key file is quite important, we download it to  `~/.ssh/ArchVPS.pem`, or anywhere considered as safe and not easy to be cleared.
+This `ArchVPS.pem` private key file is quite important, we download it to `~/.ssh/ArchVPS.pem`, or anywhere considered as safe and not easy to be cleared.
 
 ## Connect to Instance
 
@@ -63,9 +65,13 @@ We can see the instance here after launched:
 
 Now we've got the IP address of the instance, run this command to connect:
 
+> Windows users might need [PuTTY][4] or similiar tool。
+
 ```shell
 $ ssh -i ~/.ssh/ArchVPS.pem root@put.instance.ip.here
 ```
+
+[4]: <https://www.putty.org/> "Download PuTTY - a free SSH and telnet client for Windows"
 
 If you get the warning below, run `chmod 400 ~/.ssh/ArchVPS.pem` and retry.
 
