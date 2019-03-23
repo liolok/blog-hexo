@@ -101,7 +101,7 @@ Now you should have already logged into the instance as root, run `pacman -Syyuu
 
 ## Configuration
 
-First of all, here comes a [configuration template](./Setup-Free-SS-and-MTProto-Server-Using-AWS/config.json "V2Ray-Server-Configuration.jsonc").
+First of all, here comes a [configuration template](./Setup-Free-SS-and-MTProto-Server-Using-AWS/V2Ray-Server-Configuration.jsonc "V2Ray-Server-Configuration.jsonc").
 
 Do NOT read it online, download or just copy and paste it to your favorite editor. For example in VS Code, switch to "JSON with Comments" language mode, and use folding to understand the hierarchy better.
 
