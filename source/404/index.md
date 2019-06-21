@@ -6,10 +6,10 @@ comments: false
 sitemap: false
 ---
 
-<center>Please look around in [archives](/archives/) if the article link is invalid.</center>
+Please look around in [archives](/archives/) if the article link is invalid.
 
-<center>如文章链接已失效，请在[归档](/archives/)里找找看。</center>
+如文章链接已失效，请在[归档](/archives/)里找找看。
 
 ---
 
-<center>![404 Not Found](/images/sakamoto/asleep.gif "404 Not Found")</center>
+![404 Not Found](/images/sakamoto/asleep.gif "404 Not Found")
