@@ -199,8 +199,8 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  Gmail: bWFpbHRvOmxpb2xvay5pdEBnbWFpbC5jb20= || envelope-square
-  Telegram: aHR0cHM6Ly90Lm1lL2xpb2xvaw== || telegram
+  Gmail: mailto:liolokit@gmail.com || envelope-square
+  Telegram: https://t.me/liolok || telegram
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
