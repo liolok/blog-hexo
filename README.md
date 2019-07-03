@@ -1,11 +1,11 @@
-# liolok's logs
+# [LIOLOG](https://liolok.github.io) [![][build_status_icon]](https://travis-ci.org/liolok/liolok.github.io)
 
-- Powered by blog framework [Hexo](https://hexo.io/) & theme [NexT](https://github.com/theme-next/hexo-theme-next/)
+- Powered by [Hexo](https://hexo.io)
 
-- Hosted by [GitHub Pages](https://pages.github.com/)
+- Themed by [NexT](https://github.com/theme-next/hexo-theme-next)
 
-- Built by [Travis CI](https://travis-ci.org/)
+- Hosted by [GitHub Pages](https://pages.github.com)
 
-- [![Build Status](https://travis-ci.org/liolok/liolok.github.io.svg?branch=source)](https://travis-ci.org/liolok/liolok.github.io)
+- Built by [Travis CI](https://travis-ci.org)
 
-- [LIOLOG](https://liolok.github.io)
+[build_status_icon]: https://travis-ci.org/liolok/liolok.github.io.svg?branch=source
