@@ -7,19 +7,19 @@ node_js: v11.0.0  # latest one in the pre-installed versions
 cache: yarn  # cache $HOME/.cache/yarn (npm is cached by default)
 
 branches:
-  only:
-    - source
+  except:
+    - master  # don't build master branch which is for GH Pages
 
 env:
   global:
     - GH_REF: github.com/liolok/liolok.github.io.git
+    - TZ: Asia/Shanghai  # ensure post datetime accurate
 
 git:
   depth: false  # clone all commits for get markdown files' last commit date
   submodules: false  # manually initialized later during `before_install`
 
 before_install:
-  - export TZ='Asia/Shanghai'  # ensure post datetime accurate
   # Use markdown files' last commit date as their modified time
   - MD_FILES=$(find source -name '*.md')  # get all markdown files in ./source/
   - function get_last_ct { git log -1 --format="@%ct" "$1"; }  # UNIX timestamp
