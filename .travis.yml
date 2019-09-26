@@ -4,23 +4,21 @@ language: node_js
 
 node_js: v11.0.0  # latest one in the pre-installed versions
 
-cache:
-  directories:
-    - node_modules
+cache: yarn  # cache $HOME/.cache/yarn (npm is cached by default)
 
 branches:
   only:
     - source
 
 env:
- global:
-   - GH_REF: github.com/liolok/liolok.github.io.git
+  global:
+    - GH_REF: github.com/liolok/liolok.github.io.git
 
 before_install:
   - export TZ='Asia/Shanghai'  # ensure post datetime accurate
 
 install:
-  - npm install
+  - yarn install
 
 script:
   - hexo cl
