@@ -16,6 +16,7 @@ env:
 
 git:
   depth: false  # clone all commits for get markdown files' last commit date
+  submodules: false  # manually initialized later during `before_install`
 
 before_install:
   - export TZ='Asia/Shanghai'  # ensure post datetime accurate
@@ -24,6 +25,11 @@ before_install:
   - function get_last_ct { git log -1 --format="@%ct" "$1"; }  # UNIX timestamp
   - function change_mtime { touch --no-create --time=modify --date="$1" "$2"; }
   - for file in $MD_FILES; do change_mtime $(get_last_ct $file) $file; done
+  # Manully initialize theme submodule
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules  # use https
+  - git config user.name "liolok"
+  - git config user.email "liolokit@gmail.com"
+  - git submodule init
 
 install:
   - yarn install
@@ -35,8 +41,6 @@ script:
 after_script:
   - cd ./public
   - git init
-  - git config user.name "liolok"
-  - git config user.email "liolokit@gmail.com"
   - git add .
   - git commit -m "Site deployed by Travis CI"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
