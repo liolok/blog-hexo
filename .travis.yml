@@ -2,7 +2,7 @@ dist: bionic  # Ubuntu 18.04
 
 language: node_js
 
-node_js: lts/*
+node_js: v11.0.0  # latest one in the pre-installed versions
 
 cache:
   directories:
