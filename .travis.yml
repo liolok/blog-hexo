@@ -14,15 +14,23 @@ env:
   global:
     - GH_REF: github.com/liolok/liolok.github.io.git
 
+git:
+  depth: false  # clone all commits for get markdown files' last commit date
+
 before_install:
   - export TZ='Asia/Shanghai'  # ensure post datetime accurate
+  # Use markdown files' last commit date as their modified time
+  - MD_FILES=$(find source -name '*.md')  # get all markdown files in ./source/
+  - function get_last_ct { git log -1 --format="@%ct" "$1"; }  # UNIX timestamp
+  - function change_mtime { touch --no-create --time=modify --date="$1" "$2"; }
+  - for file in $MD_FILES; do change_mtime $(get_last_ct $file) $file; done
 
 install:
   - yarn install
 
 script:
-  - hexo cl
-  - hexo g
+  - hexo clean
+  - hexo generate
 
 after_script:
   - cd ./public
