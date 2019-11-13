@@ -13,7 +13,7 @@ updated: 2019-04-16 22:00:00
 
 这篇文章中我将会主要讨论图片文件路径或者说链接。如果需要在不同的方案中快速地做出选择，可以参考下面的流程图并直接跳转到相应部分。
 
-![快速选择](如何为-Hexo-博文加入图片/快速选择.png "快速选择一个方案")
+![快速选择](How-to-Add-Image-to-Hexo-Blog-Post/Quick-Choice.png "快速选择一个方案")
 
 <!-- more -->
 
@@ -103,6 +103,6 @@ $ npm i --save hexo-asset-link
 
 # Hexo 标签插件语法
 
-这是关于这个方案的官方[文档](https://hexo.io/zh-cn/docs/asset-folders.html#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6 "相对路径引用的标签插件")，我甚至不想在自己的博客里写出来。这里是英文版文档页面下放的最热评论：
+这是关于这个方案的官方[文档](https://hexo.io/zh-cn/docs/asset-folders.html#相对路径引用的标签插件 "相对路径引用的标签插件")，我甚至不想在自己的博客里写出来。这里是英文版文档页面下放的最热评论：
 
-![关于标签插件语法的最热评论](如何为-Hexo-博文加入图片/关于标签插件语法的最热评论.png "关于标签插件语法的最热评论")
+![关于标签插件语法的最热评论](How-to-Add-Image-to-Hexo-Blog-Post/Top-Comments-of-Tag-Syntax.png "关于标签插件语法的最热评论")

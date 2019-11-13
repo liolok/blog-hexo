@@ -24,7 +24,7 @@ $ yay -Syu nodejs-hexo-cli git
 
 然后就可以直接跳到[创建站点](#创建站点)步骤。
 
-![其他平台做得到吗](使用-Hexo-和-GitHub-Pages-搭建博客/其他平台做得到吗.png)
+![其他平台做得到吗](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Show-Off-Arch-Linux.png)
 
 ### Node.js
 
@@ -32,7 +32,7 @@ $ yay -Syu nodejs-hexo-cli git
 
 安装完成后在命令提示符中使用 `node -v` 和 `npm -v` 验证 Node.js 环境及其包管理器：
 
-![验证 Node.js 环境配置](使用-Hexo-和-GitHub-Pages-搭建博客/验证-Nodejs.png)
+![验证 Node.js 环境配置](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Verify-Nodejs.png)
 
 ### Git
 
@@ -42,7 +42,7 @@ $ yay -Syu nodejs-hexo-cli git
 
 安装完成后在命令提示符中使用 `git --version` 验证安装：
 
-![验证 Git 安装](使用-Hexo-和-GitHub-Pages-搭建博客/验证-Git.png)
+![验证 Git 安装](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Verify-Git.png)
 
 配置用户信息，注意此处的邮箱应与你的 [GitHub commit email](https://help.github.com/articles/about-commit-email-addresses/) 一致。
 
@@ -57,13 +57,13 @@ git config --global user.email "邮箱"
 
 > 在 Windows/Linux 平台上可能会有如下两个警告，提示已跳过可选依赖 `fsevent`，因其仅支持 macOS（那 npm 你还非得说）。**忽略**即可。
 
-![安装并验证 Hexo](使用-Hexo-和-GitHub-Pages-搭建博客/安装并验证-Hexo.png)
+![安装并验证 Hexo](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Install-and-Verify-Hexo.png)
 
 ## 创建站点
 
 在合适的目录下使用 `hexo init name`（自定义 name）和 `npm install` 创建博客站点并更新依赖。也可以先创建子目录并在其中使用 `hexo init` 和 `npm install`。下图中使用的是后一种方式：
 
-![创建 Hexo 站点](使用-Hexo-和-GitHub-Pages-搭建博客/创建-Hexo-站点.png)
+![创建 Hexo 站点](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Initialize-Hexo-Site.png)
 
 现在我们得到的本地目录包含着一份默认的博客源码。关于如何私人定制，可以阅读我写的另一篇文章：[私人定制 NexT 主题的 Hexo 博客](/zh-CN/私人定制-NexT-主题的-Hexo-博客/)。
 
@@ -75,7 +75,7 @@ git config --global user.email "邮箱"
 
 根据命令的回显，访问 http://localhost:4000：
 
-![预览博客](使用-Hexo-和-GitHub-Pages-搭建博客/预览博客.png)
+![预览博客](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Preview-Blog.png)
 
 在管理博客的过程中，本地预览将会是频繁进行的操作。可以考虑写个脚本来节省时间。
 
@@ -91,7 +91,7 @@ git config --global user.email "邮箱"
 
 [创建仓库](https://github.com/new)，**替换** `username` 为你的用户名（即与左边的 `Owner` **一致**）。
 
-![创建专用仓库](使用-Hexo-和-GitHub-Pages-搭建博客/创建专用仓库.png)
+![创建专用仓库](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Create-Dedicated-Repository.png)
 
 ## 发布博客
 
@@ -120,7 +120,7 @@ deploy:
 
 在博客目录下运行 `hexo deploy --generate` 或其简写 `hexo d -g`，让 Hexo 在生成静态网站后，将其部署到仓库。
 
-![首次部署](使用-Hexo-和-GitHub-Pages-搭建博客/首次部署.png)
+![首次部署](Setup-a-Blog-with-Hexo-and-GitHub-Pages/First-Deployment.png)
 
 > 如上图所示，在第一次部署时会弹出 GitHub 的身份验证，登录即可。
 
