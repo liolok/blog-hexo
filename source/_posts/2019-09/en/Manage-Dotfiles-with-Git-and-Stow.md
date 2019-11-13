@@ -12,6 +12,8 @@ So when we say dotfiles, we're talking about user level application configuratio
 
 However dotfiles may be at anywhere under your home directory: `~/.bashrc`, `~/.zshrc`, `~/.ssh/config`. Apparently, not all apps follow the XDG standard.
 
+<!-- more -->
+
 # Manage for What
 
 - Filter out your important preferences of application;
