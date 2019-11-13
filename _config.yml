@@ -126,3 +126,14 @@ pwa:
 ## Docs: https://github.com/hexojs/hexo-generator-sitemap#options
 sitemap:
   path: sitemap.xml
+
+# Plugin: utterances, a comments widget for NexT
+## Demo: https://utteranc.es/
+## Docs: https://github.com/theme-next/hexo-next-utteranc
+utteranc:
+  enable: true
+  repo: liolok/liolok.github.io
+  # pathname: pathname # pathname, url, title, og:title
+  # theme: github-light # github-light, github-dark, github-dark-orange, icy-dark, dark-blue, photon-dark
+  # cdn: https://utteranc.es/client.js
+  # priority: # If you want to modify priority, please config in **hexo**
