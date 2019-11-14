@@ -1,6 +1,6 @@
 ---
 title: 数据库原理查询语句及关系代数题目整理
-tags: [数据库, SQL]
+tags: [Database, SQL, Relational Algebra]
 lang: zh-CN
 date: 2018-06-29 23:33:33
 updated: 2018-06-29 23:34:44

@@ -1,6 +1,6 @@
 ---
 title: 数据库原理实验题目整理
-tags: [数据库, SQL]
+tags: [Database, SQL]
 lang: zh-CN
 date: 2018-05-19 08:49:15
 updated: 2018-06-26 23:34:44
@@ -13,7 +13,7 @@ updated: 2018-06-26 23:34:44
 
 # 基本表的建立与修改
 
-成绩管理数据库`GradeManager`包括四个表：学生表`Student`；课程表`Course`；班级表`Class`；成绩表`Grade`。
+成绩管理数据库 `GradeManager` 包括四个表：学生表 `Student`；课程表 `Course`；班级表 `Class`；成绩表 `Grade`。
 
 <!-- more -->
 
