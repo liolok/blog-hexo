@@ -1,6 +1,6 @@
 ---
 title: 梯子客户端收录
-tags: [Internet, V2Ray, ShadowsocksR, SSR, Shadowsocks, SS]
+tags: [Internet Censorship, V2Ray, ShadowsocksR, SSR, Shadowsocks, SS]
 date: 2018-12-18 19:01:00
 updated: 2019-04-02 19:01:00
 ---
@@ -45,7 +45,7 @@ updated: 2019-04-02 19:01:00
 
 ## SSRR on Android
 
-[喵帕斯修改版][ssrr-an-nps]：基于 SSRR [最新版][ssrr-an-gh]代码去掉了节点列表顺序打乱功能，不能与之共存。
+[喵帕斯修改版][ssrr-an-nps]：基于届时 SSRR [最新版][ssrr-an-gh] 代码去掉了节点列表乱序功能，不能与之共存。
 
 [ssrr-an-nps]: https://喵帕斯.com/downloads/client/ssr-android.apk
 
