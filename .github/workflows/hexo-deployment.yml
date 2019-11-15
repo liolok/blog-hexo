@@ -38,10 +38,14 @@ jobs:
         git submodule update --init
 
     - name: Install Dependencies
-      run: yarn install
+      run: |
+        yarn global add hexo-cli
+        yarn install
 
     - name: Generate Static Files
-      run: hexo clean && hexo generate
+      run: |
+        hexo clean
+        hexo generate
 
     - name: Deploy to GitHub Pages
       env:
