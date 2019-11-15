@@ -1,4 +1,4 @@
-name: Hexo-Deployment-Workflow
+name: Deployment
 
 on:
   push:
@@ -7,8 +7,6 @@ on:
 jobs:
   hexo-deployment:
     runs-on: ubuntu-18.04
-    env:
-      TZ: Asia/Shanghai  # ensure post datetime accurate
     steps:
     - name: Checkout Source
       uses: actions/checkout@v1
@@ -56,5 +54,5 @@ jobs:
         cd ./public && git init && git add .
         git config user.name "liolok"
         git config user.email "i@liolok.com"
-        git commit -m ":rocket:\ Site deployed by GitHub Actions"
+        git commit -m "Site deployed by GitHub Actions"
         git push --force --quiet "https://${TOKEN}@${REPO}" master:master
