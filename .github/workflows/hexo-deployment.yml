@@ -25,17 +25,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    # https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows#example-using-the-cache-action
-    - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-build-${{ env.cache-name }}-
-          ${{ runner.OS }}-build-
-          ${{ runner.OS }}-
-
     - name: Change Post Files Modified Time
       run: |  # Use markdown files' last commit date as their modified time
         files=$(find source -name '*.md')  # find all markdown files in ./source/
