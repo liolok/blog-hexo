@@ -1,0 +1,66 @@
+name: Hexo-Deployment-Workflow
+
+on:
+  push:
+    branch: [source]  # only push events on source branch trigger deployment
+
+jobs:
+  hexo-deployment:
+    runs-on: ubuntu-18.04
+    env:
+      TZ: Asia/Shanghai  # ensure post datetime accurate
+    steps:
+    - name: Checkout Source
+      uses: actions/checkout@v1
+
+    # https://github.com/actions/cache/blob/master/examples.md#node---yarn
+    - name: Get Yarn Cache Directory
+      id: yarn-cache
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Cache Yarn
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.yarn-cache.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    # https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows#example-using-the-cache-action
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
+    - name: Change Post Files Modified Time
+      run: |  # Use markdown files' last commit date as their modified time
+        files=$(find source -name '*.md')  # find all markdown files in ./source/
+        function get_last_ct { git log -1 --format="@%ct" "$1"; }  # UNIX timestamp
+        function set_mtime { touch --no-create --time=modify --date="$1" "$2"; }
+        for file in $files; do set_mtime $(get_last_ct $file) $file; done
+
+    - name: Initialize Theme Submodule
+      run: |
+        sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules  # use https
+        git submodule update --init
+
+    - name: Install Dependencies
+      run: yarn install
+
+    - name: Generate Static Files
+      run: hexo clean && hexo generate
+
+    - name: Deploy to GitHub Pages
+      env:
+        REPO: github.com/liolok/liolok.github.io.git
+        TOKEN: ${{ secrets.CD_TOKEN }}
+      run: |
+        cd ./public && git init && git add .
+        git config user.name "liolok"
+        git config user.email "i@liolok.com"
+        git commit -m ":rocket:\ Site deployed by GitHub Actions"
+        git push --force --quiet "https://${TOKEN}@${REPO}" master:master
