@@ -1,4 +1,4 @@
-# [LIOLOG](https://liolok.github.io) [![][build_status_icon]](https://travis-ci.org/liolok/liolok.github.io)
+# [LIOLOG](https://liolok.github.io) [![][deployment_status]](https://github.com/liolok/liolok.github.io/actions)
 
 - Powered by [Hexo](https://hexo.io)
 
@@ -6,6 +6,6 @@
 
 - Hosted by [GitHub Pages](https://pages.github.com)
 
-- Built by [Travis CI](https://travis-ci.org)
+- Deployed by [GitHub Actions](https://github.com/features/actions)
 
-[build_status_icon]: https://travis-ci.org/liolok/liolok.github.io.svg?branch=source
+[deployment_status]: https://github.com/liolok/liolok.github.io/workflows/Deployment/badge.svg
