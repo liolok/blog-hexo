@@ -1,6 +1,6 @@
 ---
 title: Setup Free SS and MTProto Server Using AWS
-tags: [Free, Shadowsocks, MTProto, VPS]
+tags: [Free, V2Ray, Shadowsocks, SS, MTProto, VPS]
 date: 2019-03-23 09:30:11
 updated: 2019-03-23 17:08:11
 ---

@@ -1,6 +1,6 @@
 ---
 title: 如何为 Hexo 博文加入图片
-tags: [Hexo]
+tags: [Hexo, Blog]
 date: 2019-04-14 12:10:00
 updated: 2019-04-16 22:00:00
 ---

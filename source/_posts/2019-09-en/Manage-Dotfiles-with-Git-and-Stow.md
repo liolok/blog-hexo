@@ -1,6 +1,6 @@
 ---
 title: Manage Dotfiles with Git and Stow
-tags: [Linux]
+tags: [Linux, Git]
 date: 2019-09-28 19:46:30
 ---
 

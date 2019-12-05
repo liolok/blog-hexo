@@ -1,6 +1,6 @@
 ---
 title: 使用 AWS 免费搭建 SS + MTProto 服务端
-tags: [VPS, Shadowsocks, MTProto]
+tags: [Free, V2Ray, Shadowsocks, SS, MTProto, VPS]
 lang: zh-CN
 date: 2019-03-23 16:04:30
 updated: 2019-03-23 17:04:30

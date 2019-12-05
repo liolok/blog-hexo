@@ -1,6 +1,6 @@
 ---
 title: How to Add Image to Hexo Blog Post
-tags: [Hexo]
+tags: [Hexo, Blog]
 date: 2019-04-14 12:10:00
 updated: 2019-04-16 22:00:00
 ---

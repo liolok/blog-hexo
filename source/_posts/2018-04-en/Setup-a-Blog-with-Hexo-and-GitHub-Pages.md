@@ -63,7 +63,7 @@ Change to your prefered directory, and run `hexo init name` (use your prefered n
 
 ![Initialize Hexo Site](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Initialize-Hexo-Site.png)
 
-Now we got a local folder containing a default blog's source. I wrote another article for modifiying it, see [Customize Hexo Blog with NexT Theme](/en/Customize-Hexo-Blog-with-NexT-Theme/).
+Now we got a local folder containing a default blog's source. I wrote another article for modifiying it, check it out in my [Hexo posts](/tags/Hexo).
 
 ## Preview Blog
 
@@ -91,7 +91,7 @@ Of course Hexo is a static blog framework and we already have a Hexo site on loc
 
 ## Publish Blog Online
 
-> **This chapter is left for reference only**: I'm managing blog in a better workflow, including auto deployment, see here: [Manage Hexo Blog with Git and Travis CI](/en/Manage-Hexo-Blog-with-Git-and-Travis-CI/).
+> **This chapter is left for reference only**: I'm managing blog in a better workflow, including auto deployment and more, check out other [Hexo posts](/tags/Hexo).
 
 Reference: [Deployment | Hexo](https://hexo.io/docs/deployment.html#Git)
 

@@ -1,6 +1,6 @@
 ---
 title: 使用 Hexo 和 GitHub Pages 搭建博客
-tags: [Hexo, Github Pages, 博客]
+tags: [Hexo, Github Pages, Blog]
 lang: zh-CN
 date: 2018-04-14 10:41:26
 updated: 2019-02-18 17:46:56
@@ -65,7 +65,7 @@ git config --global user.email "邮箱"
 
 ![创建 Hexo 站点](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Initialize-Hexo-Site.png)
 
-现在我们得到的本地目录包含着一份默认的博客源码。关于如何私人定制，可以阅读我写的另一篇文章：[私人定制 NexT 主题的 Hexo 博客](/zh-CN/私人定制-NexT-主题的-Hexo-博客/)。
+现在我们得到的本地目录包含着一份默认的博客源码。关于如何私人定制，详见 [Hexo 相关文章](/tags/Hexo)。
 
 ## 预览博客
 
@@ -95,7 +95,7 @@ git config --global user.email "邮箱"
 
 ## 发布博客
 
-> **本章节以下内容仅留作参考**：笔者正在使用一种更为先进的方式进行博客管理，其中就包括自动化部署，详见：[使用 Git 和 Travis CI 管理 Hexo 博客](/zh-CN/使用-Git-和-Travis-CI-管理-Hexo-博客/)。
+> **本章节以下内容仅留作参考**：笔者正在使用一种更为先进的方式进行博客管理，其中就包括自动化部署，详见 [Hexo 相关文章](/tags/Hexo)。
 
 参考官方文档中的[部署](https://hexo.io/zh-cn/docs/deployment#Git)章节。
 
