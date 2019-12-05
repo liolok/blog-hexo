@@ -1,4 +1,5 @@
 default:
   menu:
-    home-en: Home
-    home-zh-CN: 首页
+    home-en: English
+    home-zh-CN: Chinese
+    tags: Tags
