@@ -983,20 +983,6 @@ hexo-fs@^2.0.0:
     escape-string-regexp "^2.0.0"
     graceful-fs "^4.1.11"
 
-hexo-generator-archive@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/hexo-generator-archive/-/hexo-generator-archive-1.0.0.tgz#ad2afb12232a65e2f8608fc1ca3f19162fb63786"
-  integrity sha512-24TeanDGpMBUIq37DHpSESQbeN6ssZ06edsGSI76tN4Yit50TgsgzP5g5DSu0yJk0jUtHJntysWE8NYAlFXibA==
-  dependencies:
-    hexo-pagination "1.0.0"
-
-hexo-generator-category@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/hexo-generator-category/-/hexo-generator-category-1.0.0.tgz#cd2a2b03eb326da3ef821d6e29408488cc132eb5"
-  integrity sha512-kmtwT1SHYL2ismbGnYQXNtqLFSeTdtHNbJIqno3LKROpCK8ybST5QVXF1bZI9LkFcXV/H8ilt8gfg4/dNNcQQQ==
-  dependencies:
-    hexo-pagination "1.0.0"
-
 hexo-generator-index-i18n@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/hexo-generator-index-i18n/-/hexo-generator-index-i18n-0.2.1.tgz#3bd6280bb47b2fc93eeb48e3905cbe058bbd8401"
@@ -1044,9 +1030,9 @@ hexo-log@^1.0.0:
 
 hexo-next-utteranc@theme-next/hexo-next-utteranc:
   version "1.0.0"
-  resolved "https://codeload.github.com/theme-next/hexo-next-utteranc/tar.gz/0678538cb16c4b96ed3ac949ff552174640cd838"
+  resolved "https://codeload.github.com/theme-next/hexo-next-utteranc/tar.gz/6f841a67c9d12f1453be8269abb6307862542753"
   dependencies:
-    js-yaml "^3.13.1"
+    next-util "github:theme-next/next-util"
 
 hexo-pagination@1.0.0:
   version "1.0.0"
