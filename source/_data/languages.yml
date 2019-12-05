@@ -2,4 +2,4 @@ default:
   menu:
     home-en: English
     home-zh-CN: Chinese
-    tags: Tags
+    tags-en: Tags

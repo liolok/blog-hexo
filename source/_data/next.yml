@@ -124,7 +124,7 @@ menu:
   home-en: / || globe
   home-zh-CN: /zh-CN/ || language
   #about: /about/ || user
-  tags: /tags/ || tags
+  tags-en: /tags/ || tags
   #categories: /categories/ || th
   #archives: /archives/ || archive
   #schedule: /schedule/ || calendar
