@@ -6,9 +6,9 @@ comments: false
 sitemap: false
 ---
 
-Please look around in [archives](/archives/) if the article link is invalid.
+Please look around in [homepage](/) if the article link is invalid.
 
-如文章链接已失效，请在[归档](/archives/)里找找看。
+如文章链接已失效，请在[首页](/zh-CN/)里找找看。
 
 ---
 
