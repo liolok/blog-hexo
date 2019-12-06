@@ -40,17 +40,17 @@ De Casteljau 算法的核心内容是*线性插值（Linear interpolation）*。
 
 两点一线，控制多边形恰好是一条线段，即是最简单的线性曲线。
 
-![线性曲线](Bézier-Curve-and-De-Casteljau-Algorithm/Linear-Curve.gif)
+![线性曲线](Bezier-Curve-and-De-Casteljau-Algorithm/Linear-Curve.gif)
 
 此时原始公式特化为：$R(t)=(1-t)R_0+tR_1$
 
-**这——就是线性插值.**
+**这——就是线性插值。**
 
 ## 二次 Bézier 曲线
 
 三点两线，控制多边形有两条线段，便是二次曲线。
 
-![二次曲线](Bézier-Curve-and-De-Casteljau-Algorithm/Quadratic-Curve.gif)
+![二次曲线](Bezier-Curve-and-De-Casteljau-Algorithm/Quadratic-Curve.gif)
 
 此时我们需要 **3** 次线性插值才能得到 $R(t)$ :
 
@@ -67,13 +67,13 @@ $R(t)=R_0^{(2)}=(1-t)R_0^{(1)}+tR_1^{(1)}$
 我这里只继续搬运一些动画，感受一下如何逐渐推广。
 
 三次曲线：
-![三次曲线](Bézier-Curve-and-De-Casteljau-Algorithm/Third-Order-Curve.gif)
+![三次曲线](Bezier-Curve-and-De-Casteljau-Algorithm/Third-Order-Curve.gif)
 
 四次曲线：
-![四次曲线](Bézier-Curve-and-De-Casteljau-Algorithm/Fourth-Order-Curve.gif)
+![四次曲线](Bezier-Curve-and-De-Casteljau-Algorithm/Fourth-Order-Curve.gif)
 
 五次曲线：
-![五次曲线](Bézier-Curve-and-De-Casteljau-Algorithm/Fifth-Order-Curve.gif)
+![五次曲线](Bezier-Curve-and-De-Casteljau-Algorithm/Fifth-Order-Curve.gif)
 
 > 以上动画取自：[Bézier curve - Wikipedia](https://en.wikipedia.org/wiki/Bézier_curve "Bézier curve - Wikipedia")。
 
@@ -83,7 +83,7 @@ $R(t)=R_0^{(2)}=(1-t)R_0^{(1)}+tR_1^{(1)}$
 
 这个线性插值的重复过程我参考了很多资料后觉得还是用下图中的金字塔模型来描述最形象，自下而上，最后得到塔顶即是所求的点。
 
-![De Casteljau 金字塔模型](Bézier-Curve-and-De-Casteljau-Algorithm/De-Casteljau-Pyramid-Model.png)
+![De Casteljau 金字塔模型](Bezier-Curve-and-De-Casteljau-Algorithm/De-Casteljau-Pyramid-Model.png)
 
 以下代码仅为 deCasteljau 算法求值的示例代码，头文件的具体实现取决于该函数的需求:
 
@@ -115,8 +115,8 @@ Point deCasteljauEval(const Bezier& R, double t)
 
 ## 剖分示例
 
-![剖分示例](Bézier-Curve-and-De-Casteljau-Algorithm/Example.gif)
+![剖分示例](Bezier-Curve-and-De-Casteljau-Algorithm/Example.gif)
 
 # 参考资料
 
-[The de Casteljau Algorithm for Evaluating Bezier Curves](./Bézier-Curve-and-De-Casteljau-Algorithm/The-de-Casteljau-Algorithm-for-Evaluating-Bezier-Curves.pdf)：这篇论文给了我很大启发，包括但不限于前面提到的金字塔模型。
+[The de Casteljau Algorithm for Evaluating Bezier Curves](./Bezier-Curve-and-De-Casteljau-Algorithm/The-de-Casteljau-Algorithm-for-Evaluating-Bezier-Curves.pdf)：这篇论文给了我很大启发，包括但不限于前面提到的金字塔模型。
