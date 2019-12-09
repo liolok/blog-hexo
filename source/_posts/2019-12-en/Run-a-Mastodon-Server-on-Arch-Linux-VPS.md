@@ -4,9 +4,15 @@ tags: [Arch Linux, VPS, Mastodon, Server]
 date: 2019-12-08 22:00:00
 ---
 
-I'm using one-year free trial of AWS, , there are [Arch Linux AMIs][archlinux_ami] according to [ArchWiki][arch_wiki], which peopel can directly launch.
+## Mastodon?
 
-Basically a VPS that one can install Arch Linux on it is enough.
+Short story: open-source self-hosted Twitter. So why not Twitter? Well Mastodon should be more private and under my own control.
+
+## VPS Requirement
+
+I'm using one-year free trial of AWS, there are [Arch Linux AMIs][archlinux_ami] according to [ArchWiki][arch_wiki], which peopel can directly launch EC2 instances.
+
+Basically a VPS that one can install Arch Linux on it is enough; Hardware resource requirement depends on user amount, in my case, a free trial VPS should be enough.
 
 [arch_wiki]: https://wiki.archlinux.org/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services - ArchWiki"
 [archlinux_ami]: https://www.uplinklabs.net/projects/arch-linux-on-ec2/ "Uplink Laboratories"
@@ -36,7 +42,7 @@ My VPS has only 1G memory, so a swapfile is considered necessery.
 
 I don't know how to use `vi` so `nano` is needed.
 
-For package `yay`, one can install it after [adding archlinuxcn repo][archlinuxcn].
+For package `yay`, one can install it after [adding Arch Linux CN repository][archlinuxcn].
 
 [archlinuxcn]: https://github.com/archlinuxcn/repo#usage "archlinuxcn/repo: Arch Linux CN Repository"
 
@@ -60,7 +66,7 @@ Nodejs stuff will take quite a long time even without output. After installation
 # systemctl enable --now postgresql redis
 ```
 
-I ran into a trouble that postgresql.service failed to start, so look into it:
+I ran into a trouble that the service of PostgreSQL failed to start, so look into it:
 
 <pre><span style="background-color:#D70000"><font color="#D75F00"> </font></span><span style="background-color:#D70000"><font color="#FFFFFF"><b>root </b></font></span><span style="background-color:#585858"><font color="#D70000"> </font></span><span style="background-color:#585858"><font color="#D0D0D0"><b>~ </b></font></span><font color="#585858"> </font><font color="#4E9A06">systemctl</font> status postgresql                                                                                                                                                  <font color="#5F0000"> </font><span style="background-color:#5F0000"><font color="#FFFFFF"> 1 </font></span>
 <font color="#EF2929"><b>●</b></font> postgresql.service - PostgreSQL database server
@@ -123,7 +129,7 @@ It's ok, do the next steps:
 
 Then run `systemctl enable --now nginx`.
 
-## Final Mastodon Setup
+## Final Setup
 
 ```shell
 # tmux
@@ -141,7 +147,7 @@ First content to input is my own domain `zone.liolok.com`; then comes stuff abou
 
 Then the database and pre-compile work, latter would take longer. Finally I config the admin account information, and get the default password generated.
 
-Up to now, everything is ready, start the mastodon services, and the website becomes available.
+Up to now, everything is ready. Start the mastodon services, and the website becomes available.
 
 ```shell
 # systemctl enable --now mastodon.target
