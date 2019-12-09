@@ -11,6 +11,10 @@ Basically a VPS that one can install Arch Linux on it is enough.
 [arch_wiki]: https://wiki.archlinux.org/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services - ArchWiki"
 [archlinux_ami]: https://www.uplinklabs.net/projects/arch-linux-on-ec2/ "Uplink Laboratories"
 
+## Add DNS Record
+
+Go to my DNS service website then add an A record with public IP of VPS to my domain.
+
 ## Add Swap Space
 
 > [Swap - ArchWiki](https://wiki.archlinux.org/index.php/Swap#systemd-swap "Swap - ArchWiki")
