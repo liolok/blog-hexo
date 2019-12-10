@@ -183,8 +183,7 @@ site_state: false
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  Gmail: mailto:liolokit@gmail.com || envelope-square
-  Telegram: https://t.me/liolok || telegram
+  liolok: https://liolok.com || user
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
