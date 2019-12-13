@@ -69,7 +69,7 @@ Now we got a local folder containing a default blog's source. I wrote another ar
 
 In site directory run `hexo server` or its abbreviation `hexo s` to start the local server. You can also run `hexo s -i 192.168.*.*` (use your PC's LAN IP) if want to preview on other devices in LAN like phones. If you want to change the port or if you’re encountering `EADDRINUSE` errors, use the `-p` option to set a different port.
 
-According to output, visit http://localhost:4000:
+According to output, visit `http://localhost:4000`:
 
 ![Preview Blog](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Preview-Blog.png)
 

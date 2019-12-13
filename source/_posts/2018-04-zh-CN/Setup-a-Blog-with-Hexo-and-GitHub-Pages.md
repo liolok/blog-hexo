@@ -73,7 +73,7 @@ git config --global user.email "邮箱"
 
 在博客目录下使用 `hexo server` 或其简写 `hexo s` 启动本地服务器。如需实现在同一局域网下的其他设备如手机上也能预览，可以使用 `hexo s -i 192.168.*.*`，其中 `192.168.*.*` 为电脑的局域网 IP。
 
-根据命令的回显，访问 http://localhost:4000：
+根据命令的回显，访问 `http://localhost:4000`：
 
 ![预览博客](Setup-a-Blog-with-Hexo-and-GitHub-Pages/Preview-Blog.png)
 
