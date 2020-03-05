@@ -194,7 +194,6 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  #RSS: /atom.xml || rss
 
 social_icons:
   enable: true
@@ -279,7 +278,16 @@ reward_settings:
 reward:
   #wechatpay: /images/wechatpay.png
   #alipay: /images/alipay.png
+  #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
+
+# Subscribe through Telegram Channel, Twitter, etc.
+# Usage: `Key: permalink || icon` (Font Awesome)
+follow_me:
+  #Twitter: https://twitter.com/username || twitter
+  #Telegram: https://t.me/channel_name || telegram
+  #WeChat: /images/wechat_channel.jpg || wechat
+  #RSS: /atom.xml || rss
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -415,7 +423,7 @@ github_banner:
 font:
   enable: false
 
-  # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
+  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
 
   # Font options:
@@ -580,6 +588,8 @@ comments:
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
+  # Lazyload all comment systems.
+  lazyload: false
   # Modify texts or order for any navs, here are some examples.
   nav:
     #disqus:
@@ -593,7 +603,6 @@ disqus:
   enable: false
   shortname:
   count: true
-  lazyload: false
   #post_meta_order: 0
 
 # DisqusJS
@@ -603,8 +612,7 @@ disqus:
 disqusjs:
   enable: false
   # API Endpoint of Disqus API (https://disqus.com/api/).
-  # Leave api empty if you are able to connect to Disqus API.
-  # Otherwise you need a reverse proxy for Disqus API.
+  # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
   # For example:
   # api: https://disqus.skk.moe/disqus/
   api:
@@ -869,17 +877,6 @@ three:
   canvas_lines: false
   canvas_sphere: false
 
-# Canvas-nest
-# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-# For more information: https://github.com/hustcc/canvas-nest.js
-canvas_nest:
-  enable: false
-  onmobile: true # Display on mobile or not
-  color: "0,0,255" # RGB values, use `,` to separate
-  opacity: 0.5 # The opacity of line: 0~1
-  zIndex: -1 # z-index property of the background
-  count: 99 # The number of lines
-
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
 # For more information: https://github.com/zproo/canvas-ribbon
@@ -913,12 +910,8 @@ vendors:
   fontawesome:
 
   # MathJax
-  # mathjax: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
-  # mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
-  # mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0
+  # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   mathjax:
-  mhchem:
 
   # KaTeX
   # katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
@@ -977,10 +970,10 @@ vendors:
   gitalk_css:
 
   # Algolia Search
-  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js
-  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-  algolia_instant_js:
-  algolia_instant_css:
+  # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+  # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
+  algolia_search:
+  instant_search:
 
   # PDF
   # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
@@ -1017,12 +1010,6 @@ vendors:
   three_waves:
   canvas_lines:
   canvas_sphere:
-
-  # Internal version: 1.0.0
-  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-  # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-  canvas_nest:
-  canvas_nest_nomobile:
 
   # Internal version: 1.0.0
   # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
