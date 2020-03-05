@@ -121,9 +121,15 @@ pwa:
         - src: /images/sakamoto/launcher_192.png
           sizes: 192x192
           type: image/png
+          puspose: any
         - src: /images/sakamoto/launcher_512.png
           sizes: 512x512
           type: image/png
+          puspose: any
+        - src: /images/sakamoto/launcher_maskable.png
+          sizes: 240x240
+          type: image/png
+          purpose: maskable
   serviceWorker:
     path: /sw.js
     options:
