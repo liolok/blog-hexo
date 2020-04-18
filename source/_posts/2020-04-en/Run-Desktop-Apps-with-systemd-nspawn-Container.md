@@ -16,7 +16,7 @@ I've tried Arch Linux and Ubuntu 18.04 containers on my desktop running Arch Lin
 
 ### Arch Linux Container
 
-```shell
+```console
 $ container_dir=~/machines # directory of my containers
 $ mkdir $container_dir # create it if not exists yet
 $ cd $container_dir # change into it
@@ -34,7 +34,7 @@ About the last `pacstrap` command:
 
 ### Ubuntu 18.04 Container
 
-```shell
+```console
 $ container_dir=~/machines # directory of my containers
 $ mkdir $container_dir # create it if not exists yet
 $ cd $container_dir # change into it
@@ -72,19 +72,32 @@ If you want a common container that run several applications, it's considered ne
 
 `--bind=` in command options or `Bind=` in `[Files]` section of configurations; `--bind-ro=` or `BindReadOnly=` for read-only access.
 
-Usage:
+These options could be used multiple times, so that you may expose as many files/folders to container as you want. I prefer to allow read-only access as long as it works.
 
-```shell
-$ cd $container_dir
-$ path_on_host_1=/absolute/path/on/host
-$ path_on_host_2=+relative/path/to/container/on/host
-$ path_in_container=/absolute/path/inside/container
-$ mount_option=norbind # non-recursive, instead of binding sub-directories by default
-# systemd-nspawn --directory=$container_name \
-> --bind-ro=$path_on_host_1 \ # bind source path from host to the same path read-only in container
-> --bind=$path_on_host_2:$path_in_container:$mount_option \ # bind to different path in container
-> --bind=:/temporary/directory/inside/container \ # will be removed when container poweroff
+I'll show several simple use cases below, with basic `--bind=`, other forms are similar.
+
+Simplest case, expose certain file/folder on host to the **same** path in container:
+
+```console
+$ host_path=/absolute/path/on/host
+# systemd-nspawn \
+> --directory=$container_name \
+> --bind=$host_path
 ```
+
+If you want container to access it with **different** path:
+
+```console
+$ host_path=/absolute/path/on/host
+$ container_path=/absolute/path/inside/container
+# systemd-nspawn \
+> --directory=$container_name \
+> --bind=$host_path:$container_path
+```
+
+To allow one-time access, you could use an empty string for host path: `--bind=:$container_path`. systemd-nspawn will create a temporary folder for container below the host's `/var/tmp` directory, and remove it automatically when container is shut down.
+
+By default, a folder will be bind-mounted recursively. To allow access to particular path without sub-directories below it, you could append mount option: `--bind=$host_path:$container_path:norbind`.
 
 ### Environment Variables
 
@@ -112,10 +125,11 @@ BindReadOnly=/tmp/.X11-unix/
 
 > As far as I experienced, if run GUI application as the same user as host, one **may not need** to handle the authority stuff. So if window works fine after instructions above, just skip this step.
 
-```shell
+```console
 $ auth_file=/tmp/${container_name}_xauth
 $ xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$auth_file" nmerge -
-# systemd-nspawn -D $container_name \
+# systemd-nspawn \
+> --directory=$container_name \
 > --bind=/tmp/.X11-unix \
 > --bind="$auth_file" \
 > --set-env=DISPLAY="$DISPLAY" \
@@ -145,37 +159,39 @@ No command option needed, or `VirtualEthernet=no` in `[Network]` section of conf
 
 ## Prepare Container
 
-Startup the container, install your target application, run it for test. If things don't work as expected, go back to configure it out.
+Startup the container, install your target application, create an unprivileged user then run it for test. If it doesn't work as expected, go back to configure container out.
 
 ## Tray Icon through DBus
 
-```shell
-$ set host_dbus # tray icon
+```console
 $ if [[ -n $DBUS_SESSION_BUS_ADDRESS ]]; then # remove prefix
->     host_dbus=${DBUS_SESSION_BUS_ADDRESS#unix:path=};
-> else
->     host_dbus=/run/user/$UID/bus;
+>     host_bus=${DBUS_SESSION_BUS_ADDRESS#unix:path=};
+> else # default guess
+>     host_bus=/run/user/$UID/bus;
 > fi
-# systemd-nspawn -D $container_name \
-> --bind-ro=$host_dbus:/run/user/host/bus \
-> --set-env=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/host/bus
+$ container_bus=/run/user/host/bus
+# systemd-nspawn \
+> --directory=$container_name \
+> --bind-ro=$host_bus:$container_bus \
+> --set-env=DBUS_SESSION_BUS_ADDRESS=unix:path=$container_bus
 ```
 
 ## Sound through PulseAudio
 
-```shell
-$ set host_pulse # sound
+```console
 $ if [[ -n $PULSE_SERVER ]]; then # remove prefix
 >   host_pulse=${PULSE_SERVER#unix:};
-> else
+> else # default guess
 >   host_pulse=/run/user/$UID/pulse;
 > fi
-# systemd-nspawn -D $container_name \
-> --bind-ro=$host_pulse:/run/user/host/pulse/ \
-> --setenv=PULSE_SERVER=unix:/run/user/host/pulse/native
+$ container_pulse=/run/user/host/pulse/
+# systemd-nspawn \
+> --direcoty=$container_name \
+> --bind-ro=$host_pulse:$container_pulse \
+> --setenv=PULSE_SERVER=unix:$container_pulse/native
 ```
 
-Apps explicitly depend on ALSA can break PulseAudio, for Arch Linux container `pacman -S pulseaudio-alsa --assume-installed pulseaudio` solves the problem.
+> Apps explicitly depend on ALSA can break PulseAudio, for Arch Linux container `pacman -S pulseaudio-alsa --assume-installed pulseaudio` solves the problem.
 
 ## UI Consistency
 
