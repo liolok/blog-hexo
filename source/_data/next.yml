@@ -170,7 +170,7 @@ avatar:
   rotated: false
 
 # Posts / Categories / Tags in sidebar.
-site_state: false
+site_state: true
 
 # Social Links
 # Usage: `Key: permalink || icon`
