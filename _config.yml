@@ -173,7 +173,7 @@ sitemap:
 utteranc:
   enable: true
   repo: liolok/liolok.github.io
-  # pathname: pathname # pathname, url, title, og:title
+  pathname: og:title # pathname, url, title, og:title
   # theme: github-light # github-light, github-dark, github-dark-orange, icy-dark, dark-blue, photon-dark
   # cdn: https://utteranc.es/client.js
   # priority: # If you want to modify priority, please config in **hexo**
