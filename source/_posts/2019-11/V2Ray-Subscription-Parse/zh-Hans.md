@@ -1,6 +1,7 @@
 ---
 title: V2Ray 订阅解析
 tags: [V2Ray]
+lang: zh-CN
 date: 2019-11-18 11:38:56
 ---
 

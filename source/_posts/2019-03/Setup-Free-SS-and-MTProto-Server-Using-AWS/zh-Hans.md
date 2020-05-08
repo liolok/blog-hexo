@@ -10,7 +10,7 @@ updated: 2019-03-23 17:04:30
 
 > 注册账户需要一张信用卡，AWS 支持以下类型：
 
-![AWS 账户支持的信用卡类型](./Setup-Free-SS-and-MTProto-Server-Using-AWS/AWS-Credit-Card-Types.png)
+![AWS 账户支持的信用卡类型](./AWS-Credit-Card-Types.png)
 
 https://portal.aws.amazon.com/billing/signup
 
@@ -31,7 +31,7 @@ https://portal.aws.amazon.com/billing/signup
 
 访问[这个链接][2]（来自 [ArchWiki][3]），根据地区选择一个镜像。
 
-![选择实例镜像](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Choose-Image.png)
+![选择实例镜像](./Choose-Image.png)
 
 [2]: https://www.uplinklabs.net/projects/arch-linux-on-ec2/
 [3]: <https://wiki.archlinux.org/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services> "Arch Linux AMIs for Amazon Web Services - ArchWiki"
@@ -40,21 +40,21 @@ https://portal.aws.amazon.com/billing/signup
 
 ## 选择实例类型
 
-![选择实例类型](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Choose-Instance-Type.png)
+![选择实例类型](./Choose-Instance-Type.png)
 
 只有一个免费的类型所以实际上我们并没有什么选择，直接跳到第六步。
 
 ## 添加流量规则
 
-![添加流量规则](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Add-Traffic-Rule.png)
+![添加流量规则](./Add-Traffic-Rule.png)
 
-![添加流量规则成功](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Added-Traffic-Rule.png)
+![添加流量规则成功](./Added-Traffic-Rule.png)
 
 > 我不了解“允许来自任何地方的所有流量”会有多么不安全。如果你在意安全性，请阅读官方文档并做出相应的改动。
 
 ## 下载密钥文件并启动实例
 
-![下载密钥文件并启动实例](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Download-Key-File-and-Launch.png)
+![下载密钥文件并启动实例](./Download-Key-File-and-Launch.png)
 
 这个名为 `ArchVPS.pem` 的密钥文件非常重要，我们将它下载至 `~/.ssh/ArchVPS.pem` 或者其他安全、不易被清除的位置。
 
@@ -62,7 +62,7 @@ https://portal.aws.amazon.com/billing/signup
 
 我们可以在这里查看并管理实例：
 
-![获取实例 IP](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Get-Instance-IP.png "获取实例 IP")
+![获取实例 IP](./Get-Instance-IP.png "获取实例 IP")
 
 现在我们获取到了实例的 IP 地址，运行这条命令以连接：
 
@@ -102,9 +102,9 @@ Warning: Permanently added '*.*.*.*' (ECDSA) to the list of known hosts.
 
 ## 配置
 
-请下载这个不到 50 行的[配置文件模板](./Setup-Free-SS-and-MTProto-Server-Using-AWS/V2Ray-Server-Configuration.jsonc "V2Ray 服务端配置文件")并使用靠谱的编辑器打开。比如在 VS Code 中，将语言模式切换至 "JSON with Comments"，并使用块折叠功能来更好地理解配置文件的层次结构。
+请下载这个不到 50 行的[配置文件模板](./V2Ray-Server-Configuration.jsonc "V2Ray 服务端配置文件")并使用靠谱的编辑器打开。比如在 VS Code 中，将语言模式切换至 "JSON with Comments"，并使用块折叠功能来更好地理解配置文件的层次结构。
 
-![使用 VSCode 的折叠功能](./Setup-Free-SS-and-MTProto-Server-Using-AWS/Folding-with-VSCode.png "使用 VSCode 的折叠功能")
+![使用 VSCode 的折叠功能](./Folding-with-VSCode.png "使用 VSCode 的折叠功能")
 
 以下是配置模板里 `inbounds` 部分中你需要了解的内容，在客户端配置中也会用到：
 

@@ -1,6 +1,7 @@
 ---
 title: 梯子客户端收录
 tags: [GFW,  Internet Censorship, V2Ray, ShadowsocksR, SSR, Shadowsocks, SS]
+lang: zh-CN
 date: 2018-12-18 19:01:00
 updated: 2019-04-02 19:01:00
 ---

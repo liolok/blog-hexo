@@ -1,6 +1,7 @@
 ---
 title: 在 Arch Linux VPS 上运行 Mastodon 服务端
 tags: [Arch Linux, VPS, Mastodon, Server]
+lang: zh-CN
 date: 2019-12-08 22:00:00
 ---
 

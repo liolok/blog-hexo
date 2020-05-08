@@ -1,6 +1,7 @@
 ---
 title: 如何为 Hexo 博文加入图片
 tags: [Hexo, Blog]
+lang: zh-CN
 date: 2019-04-14 12:10:00
 updated: 2019-04-16 22:00:00
 ---
@@ -13,7 +14,7 @@ updated: 2019-04-16 22:00:00
 
 这篇文章中我将会主要讨论图片文件路径或者说链接。如果需要在不同的方案中快速地做出选择，可以参考下面的流程图并直接跳转到相应部分。
 
-![快速选择](How-to-Add-Image-to-Hexo-Blog-Post/Quick-Choice.png "快速选择一个方案")
+![快速选择](./Quick-Choice.png "快速选择一个方案")
 
 <!-- more -->
 
@@ -105,4 +106,4 @@ $ npm i --save hexo-asset-link
 
 这是关于这个方案的官方[文档](https://hexo.io/zh-cn/docs/asset-folders.html#相对路径引用的标签插件 "相对路径引用的标签插件")，我甚至不想在自己的博客里写出来。这里是英文版文档页面下放的最热评论：
 
-![关于标签插件语法的最热评论](How-to-Add-Image-to-Hexo-Blog-Post/Top-Comments-of-Tag-Syntax.png "关于标签插件语法的最热评论")
+![关于标签插件语法的最热评论](./Top-Comments-of-Tag-Syntax.png "关于标签插件语法的最热评论")
