@@ -1,8 +1,8 @@
 name: Deployment
 
-on:
-  push:
-    branch: [source]  # only push events on source branch trigger deployment
+# on:
+#   push:
+#     branch: [source]  # only push events on source branch trigger deployment
 
 jobs:
   hexo-deployment:

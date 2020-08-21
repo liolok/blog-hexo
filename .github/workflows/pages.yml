@@ -1,0 +1,44 @@
+name: Pages
+# (https://hexo.io/docs/github-pages.html)
+on:
+  push:
+    branches:
+      - source # default branch
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Init theme
+        run: | # use https
+          sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+          git submodule update --init
+      - name: Change Post Files Modified Time
+        run: | # Use markdown files' last commit date as their modified time
+          files=$(find source -name '*.md')  # find all markdown files in ./source/
+          function get_last_ct { git log -1 --format="@%ct" "$1"; }  # UNIX timestamp
+          function set_mtime { touch --no-create --time=modify --date="$1" "$2"; }
+          for file in $files; do set_mtime $(get_last_ct $file) $file; done
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master # deploying branch
