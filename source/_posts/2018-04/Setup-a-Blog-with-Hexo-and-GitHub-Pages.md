@@ -1,7 +1,6 @@
 ---
 title: Setup a Blog with Hexo and GitHub Pages
 tags: [Blog, Hexo, Github Pages]
-lang: en
 date: 2018-04-14 10:41:26
 updated: 2019-02-18 17:12:07
 ---

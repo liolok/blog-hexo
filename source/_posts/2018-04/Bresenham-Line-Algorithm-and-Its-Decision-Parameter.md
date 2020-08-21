@@ -1,6 +1,7 @@
 ---
 title: Bresenham 直线算法及其决策参数
 tags: [CG, OpenGL, Algorithm]
+lang: zh-CN
 date: 2018-04-01
 updated: 2018-04-19
 ---

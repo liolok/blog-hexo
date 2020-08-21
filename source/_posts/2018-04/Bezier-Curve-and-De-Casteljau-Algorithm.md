@@ -1,6 +1,7 @@
 ---
 title: Bézier 曲线与 De Casteljau 算法
 tags: [CG, OpenGL, Algorithm]
+lang: zh-CN
 date: 2018-04-28 12:50:32
 updated: 2018-04-28 23:59:59
 mathjax: true
