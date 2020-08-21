@@ -5,7 +5,7 @@
 # Site
 title: LIOLOG
 subtitle: liolok's logs
-description: 岂有文章倾社稷，从来奸佞覆乾坤。
+description: 岂有文章倾社稷，从来佞幸覆乾坤。
 keywords: [LIOLOG, liolok]
 author: 李皓奇
 language: [en, zh-Hans]
@@ -72,8 +72,6 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -101,79 +99,7 @@ theme: next
 marked:
   smartypants: false
 
-# Plugin: PWA (Progressive Web App)
-## Docs: https://github.com/jiangtj-lab/hexo-next-pwa#configure
-pwa:
-  manifest:
-    path: /manifest.json
-    body:
-      name: liolok's logs
-      short_name: LIOLOG
-      start_url: /
-      theme_color: '#000000'
-      background_color: '#ffffff'
-      orientation: portrait-primary
-      display: standalone
-      icons:
-        - src: /images/sakamoto/launcher_192.png
-          sizes: 192x192
-          type: image/png
-          puspose: any
-        - src: /images/sakamoto/launcher_512.png
-          sizes: 512x512
-          type: image/png
-          puspose: any
-        - src: /images/sakamoto/launcher_maskable.png
-          sizes: 240x240
-          type: image/png
-          purpose: maskable
-  serviceWorker:
-    path: /sw.js
-    options:
-      importScripts:
-        - https://cdn.jsdelivr.net/npm/workbox-sw@4.3.1/build/workbox-sw.min.js
-      runtimeCaching:
-        - urlPattern: !!js/regexp /\//
-          handler: NetworkFirst
-          options:
-            cacheName: index
-        - urlPattern: !!js/regexp /\.(?:js|css)$/
-          handler: StaleWhileRevalidate
-          options:
-            cacheName: js-css
-        - urlPattern: !!js/regexp /\.(?:png|gif|jpg|jpeg|svg)$/
-          handler: CacheFirst
-          options:
-            cacheName: images
-            expiration:
-              maxEntries: 60
-              maxAgeSeconds: 2592000 # 30 * 24 * 60 * 60
-        - urlPattern: !!js/regexp /^https:\/\/fonts\.googleapis\.com/
-          handler: StaleWhileRevalidate
-          options:
-            cacheName: google-fonts-stylesheets
-        - urlPattern: !!js/regexp /^https:\/\/fonts\.gstatic\.com/
-          handler: CacheFirst
-          options:
-            cacheName: google-fonts-webfonts
-            cacheableResponse:
-              statuses: [0, 200]
-            expiration:
-              maxAgeSeconds: 31536000 # 365 * 24 * 60 * 60
-      # offlineGoogleAnalytics: true
-
 # Plugin: Sitemap Generator
 ## Docs: https://github.com/hexojs/hexo-generator-sitemap#options
 sitemap:
   path: sitemap.xml
-
-# Plugin: utterances, a comments widget for NexT
-## Demo: https://utteranc.es/
-## Docs: https://github.com/theme-next/hexo-next-utteranc
-utteranc:
-  enable: true
-  repo: liolok/liolok.github.io
-  pathname: og:title # pathname, url, title, og:title
-  # theme: github-light # github-light, github-dark, github-dark-orange, icy-dark, dark-blue, photon-dark
-  # cdn: https://utteranc.es/client.js
-  # priority: # If you want to modify priority, please config in **hexo**
